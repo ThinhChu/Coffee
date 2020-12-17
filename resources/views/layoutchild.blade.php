@@ -53,7 +53,7 @@
     <div class="overlay"></div>
     <div class="container">
       <div class="row mb-5">
-        <div class="col-lg-3 col-md-6 mb-5 mb-md-5">
+        <div class="col-lg-4 col-md-6 mb-5 mb-md-5">
           <div class="ftco-footer-widget mb-4">
             <h2 class="ftco-heading-2">Về chúng tôi</h2>
             <p>Burn Coffee được thành lập nên để nhằm đáp ứng nhu cầu cho mọi người, luôn được nạp năng lượng, có được tinh thần thoải mái, để tiếp tục bắt đầu và để tiếp tục những công việc một cách tốt nhất.</p>
@@ -65,20 +65,14 @@
           </div>
         </div>
         @include('blogfooter')
-        <div class="col-lg-2 col-md-6 mb-5 mb-md-5">
-          <div class="ftco-footer-widget mb-4 ml-md-4">
-            <h2 class="ftco-heading-2">Sản phẩm</h2>
-            </ul>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-6 mb-5 mb-md-5">
+        <div class="col-lg-4 col-md-6 mb-5 mb-md-5">
           <div class="ftco-footer-widget mb-4">
-            <h2 class="ftco-heading-2">Have a Questions?</h2>
+            <h2 class="ftco-heading-2">Mọi thắc mắc liên hệ :</h2>
             <div class="block-23 mb-3">
               <ul>
-                <li><span class="icon icon-map-marker"></span><span class="text">203 Fake St. Mountain View, San Francisco, California, USA</span></li>
-                <li><a href="#"><span class="icon icon-phone"></span><span class="text">+2 392 3929 210</span></a></li>
-                <li><a href="#"><span class="icon icon-envelope"></span><span class="text">info@yourdomain.com</span></a></li>
+                <li><span class="icon icon-map-marker"></span><span class="text">40 Chu Thiên, p.Hiệp Tân, q.Tân Phú</span></li>
+                <li><a href="#"><span class="icon icon-phone"></span><span class="text">070 836 9652</span></a></li>
+                <li><a href="#"><span class="icon icon-envelope"></span><span class="text">burncoffee@gmail.com</span></a></li>
               </ul>
             </div>
           </div>

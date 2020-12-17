@@ -45,32 +45,32 @@
                             
                                 <div class="row form-group">
                                     <div class="col-12">
-                                        <label class="form-check-label mb-2" for="exampleCheck1">Tên Loại Sản Phẩm</label>
-                                        <input type="text" name="Ten_SP"  class="form-control">
+                                        <label class="form-check-label mb-2" for="exampleCheck1">Tên Sản Phẩm</label>
+                                        <input type="text" name="Ten_SP"  class="form-control" required>
                                     </div>
                                 </div>
                                 <div class="row form-group">
                                     <div class="col-12">
                                         <label class="form-check-label mb-2" for="exampleCheck1">Mô tả sản phẩm</label>
-                                        <textarea class="form-control" height="50px" name="MoTa" id="" cols="15" rows="9"></textarea>
+                                        <textarea class="form-control" height="50px" name="MoTa" id="" cols="15" rows="9" required></textarea>
                                     </div>
                                 </div>
                                 <div class="row form-group">
                                     <div class="col-6">
                                         <label class="form-check-label mb-2" for="exampleCheck1">Giá sản phẩm</label>
-                                        <input type="text" name="Gia"  class="form-control">
+                                        <input type="text" name="Gia"  class="form-control" required>
                                     </div>
             
                                     <div class="col-6">
                                         <label class="form-check-label mb-2" for="exampleCheck1">Giá khuyễn mãi</label>
-                                        <input type="text" name="Gia_KM"  class="form-control">
+                                        <input type="text" name="Gia_KM"  class="form-control" required>
                                     </div>
                                 </div>
                                 <div class="row form-group">
                                     <div class="col-4">
                                         <label class="form-check-label mb-2" for="exampleCheck1">Hình 1</label>
                                         <div class="col-12 col-md-9">
-                                            <input type="file" id="file-input" name="urlHinh1" class="form-control-file">
+                                            <input type="file" id="file-input" name="urlHinh1" class="form-control-file" required>
                                         </div>
                                     </div>
             
@@ -91,12 +91,12 @@
                                 <div class="row form-group">
                                     <div class="col-6">
                                         <label class="form-check-label mb-2" for="exampleCheck1">Số lượng</label>
-                                        <input type="number" name="So_luong"  class="form-control">
+                                        <input type="number" name="So_luong"  class="form-control" required>
                                     </div>
             
                                     <div class="col-6">
                                         <label class="form-check-label mb-2" for="exampleCheck1">Thứ tự</label>
-                                        <input type="number" name="ThuTu"  class="form-control">
+                                        <input type="number" name="ThuTu"  class="form-control" required>
                                     </div>
                                 </div>
                                 <div class="row form-group">
@@ -107,7 +107,7 @@
                                                 <input type="radio" id="inline-radio1" name="AnHien" value="0" class="form-check-input">Ẩn
                                             </label>
                                             <label for="inline-radio2" class=" ml-20">
-                                                <input type="radio" id="inline-radio2" name="AnHien" value="1" class="form-check-input">Hiện
+                                                <input type="radio" checked id="inline-radio2" name="AnHien" value="1" class="form-check-input">Hiện
                                             </label>
                                         </div>
                                     </div>

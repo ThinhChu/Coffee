@@ -344,7 +344,9 @@ section {
     text-align: center;
     margin-bottom: 30px;
 }
-
+.login-logo img{
+    width: 70%;
+}
 .login-checkbox {
     display: -webkit-box;
     display: -webkit-flex;
@@ -1180,7 +1182,7 @@ section {
 
 /* ----- Header ----- */
 .header-desktop {
-    background: #fff;
+    background: #583216 ;
     -webkit-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.1);
     -moz-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.1);
     box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.1);
@@ -1382,7 +1384,7 @@ label.form-check-label {
 
 .noti__item i {
     font-size: 30px;
-    color: #a9b3c9;
+    color: #c49b63;
     -webkit-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
@@ -1598,14 +1600,14 @@ label.form-check-label {
     left: 0;
     top: 0;
     bottom: 0;
-    background: #fff;
+    background: #583216;
     overflow-y: auto;
 }
 
 .menu-sidebar .logo {
-    background: #fff;
+    background: #583216;
     height: 75px;
-    padding: 0 35px;
+    padding: 5px;
     display: -webkit-box;
     display: -webkit-flex;
     display: -moz-box;
@@ -1616,14 +1618,15 @@ label.form-check-label {
     -moz-box-align: center;
     -ms-flex-align: center;
     align-items: center;
+    justify-content: center;
     -webkit-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.1);
     -moz-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.1);
     box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.1);
     position: relative;
     z-index: 3;
 }
-.menu-sidebar .logo a{
-    color: #583216;
+.menu-sidebar .logo img{
+    height: 100%;
 }
 
 .menu-sidebar .navbar__list .navbar__sub-list {
@@ -1649,7 +1652,7 @@ label.form-check-label {
 
 .navbar-sidebar .navbar__list li a {
     display: block;
-    color: #555;
+    color: #fff;
     font-size: 16px;
     padding: 15px 0;
 }
@@ -1659,11 +1662,11 @@ label.form-check-label {
 }
 
 .navbar-sidebar .navbar__list li a:hover {
-    color: #4272d7;
+    color: #c49b63;
 }
 
 .navbar-sidebar .navbar__list li.active > a {
-    color: #4272d7;
+    color: #c49b63;
 }
 
 .has-sub {
@@ -1697,6 +1700,9 @@ label.form-check-label {
     -moz-box-pack: justify;
     -ms-flex-pack: justify;
     justify-content: space-between;
+}
+.header-mobile .header-mobile-inner a{
+    color: #583216;
 }
 
 .header-mobile .hamburger {

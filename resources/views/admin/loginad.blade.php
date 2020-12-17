@@ -44,40 +44,34 @@
                     <div class="login-content">
                         <div class="login-logo">
                             <a href="#">
-                                <img src="assets/images/icon/logo.png" alt="CoolAdmin">
+                                <img src="images/logoburncoffee3.png" alt="BurnCoffee">
                             </a>
                         </div>
                         <div class="login-form">
                             <form action="loginad" method="post">
                                 @csrf
                                 <div class="form-group">
-                                    <label>Email Address</label>
-                                    <input class="au-input au-input--full" type="email" name="email" placeholder="Email">
+                                    <label>Tên đăng nhập</label>
+                                    <input class="au-input au-input--full" type="email" name="email" placeholder="Nhập tên đăng nhập">
                                 </div>
                                 <div class="form-group">
-                                    <label>Password</label>
-                                    <input class="au-input au-input--full" type="password" name="password" placeholder="Password">
+                                    <label>Mật khẩu</label>
+                                    <input class="au-input au-input--full" type="password" name="password" placeholder="Nhập mật khẩu">
                                 </div>
                                 <div class="login-checkbox">
                                     <label>
-                                        <input type="checkbox" name="remember">Remember Me
+                                        <input type="checkbox" name="remember">Lưu tài khoản
                                     </label>
                                     <label>
-                                        <a href="#">Forgotten Password?</a>
+                                        <a href="#">Quên mật khẩu ?</a>
                                     </label>
                                 </div>
-                                <button class="au-btn au-btn--block au-btn--green m-b-20" type="submit">sign in</button>
-                                <div class="social-login-content">
-                                    <div class="social-button">
-                                        <button class="au-btn au-btn--block au-btn--blue m-b-20">sign in with facebook</button>
-                                        <button class="au-btn au-btn--block au-btn--blue2">sign in with twitter</button>
-                                    </div>
-                                </div>
+                                <button class="au-btn au-btn--block au-btn--blue m-b-20" type="submit">Đăng nhập</button>
                             </form>
                             <div class="register-link">
                                 <p>
-                                    Don't you have account?
-                                    <a href="#">Sign Up Here</a>
+                                    Bạn không có tài khoản ?
+                                    <a href="#">Đăng kí tại đây</a>
                                 </p>
                             </div>
                         </div>

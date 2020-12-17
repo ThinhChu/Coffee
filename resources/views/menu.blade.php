@@ -10,9 +10,9 @@
         </button>
         <div class="collapse navbar-collapse" id="ftco-nav">
         <ul class="navbar-nav ml-auto">
-            <li class="nav-item active"><a href="{{ url('/') }}" class="nav-link">Trang chủ</a></li>
-            <li class="nav-item"><a href="{{ url('/gioi-thieu') }}" class="nav-link">Giới thiệu</a></li>
-            <li class="nav-item"><a href="{{ url('/san-pham') }}" class="nav-link">Sản Phẩm</a></li>
+            <li class="nav-item {{ request()->is('/') ? 'active' : '' }}"><a href="{{ url('/') }}" class="nav-link">Trang chủ</a></li>
+            <li class="nav-item {{ request()->is('gioi-thieu') ? 'active' : '' }}"><a href="{{ url('/gioi-thieu') }}" class="nav-link">Giới thiệu</a></li>
+            <li class="nav-item {{ request()->is('san-pham') ? 'active' : '' }}"><a href="{{ url('/san-pham') }}" class="nav-link">Sản Phẩm</a></li>
             <li class="nav-item dropdown">
                 <a href="{{ url('/san-pham') }}" class="nav-link dropdown-toggle" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >Danh Mục</a>
                 <div class="dropdown-menu" aria-labelledby="dropdown04">
@@ -21,9 +21,9 @@
                     @endforeach
                 </div>
             </li>
-            <li class="nav-item"><a href="{{ url('/tin-tuc') }}" class="nav-link">Tin tức</a></li>
+            <li class="nav-item {{ request()->is('tin-tuc') ? 'active' : '' }}"><a href="{{ url('/tin-tuc') }}" class="nav-link">Tin tức</a></li>
             <!-- <li class="nav-item"><a href="{{ url('/dich-vu') }}" class="nav-link">Về chúng tôi</a></li> -->
-            <li class="nav-item"><a href="{{ url('/lien-he') }}" class="nav-link">Liên hệ</a></li>
+            <li class="nav-item {{ request()->is('lien-he') ? 'active' : '' }}"><a href="{{ url('/lien-he') }}" class="nav-link">Liên hệ</a></li>
             @if(Session::has('khachhang'))
                 <li class="nav-item  dropdown">
                     <a  class="nav-link" href="{{ url('/ho-so') }}">
@@ -90,7 +90,7 @@
                 
             @else
                 <li class="nav-item login dropdown">
-                    <a href="#" class="nav-link">
+                    <a class="nav-link {{ request()->is('ho-so') ? 'active' : '' }}">
                         <svg width="1.5em" height="1.5em" viewBox="0 0 16 16" class="bi bi-person-circle" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                         <path d="M13.468 12.37C12.758 11.226 11.195 10 8 10s-4.757 1.225-5.468 2.37A6.987 6.987 0 0 0 8 15a6.987 6.987 0 0 0 5.468-2.63z"/>
                         <path fill-rule="evenodd" d="M8 9a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
@@ -105,7 +105,7 @@
                 </li>
                 <li class="nav-item cart">
                     <a href="{{ url('/gio-hang') }}" class="nav-link">
-                        <span class="icon icon-shopping_cart"></span>
+                        <span class="icon icon-shopping_cart  {{ request()->is('gio-hang') ? 'active' : '' }}"></span>
                     </a>
                 </li>
             @endif
