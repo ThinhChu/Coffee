@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Cache;
 use Illuminate\Http\Request;
 use App\Models\KhachHang;
+use Illuminate\Support\Facades\Hash;
 class KhachhangController extends Controller
 {
     /**

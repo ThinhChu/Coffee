@@ -15,10 +15,8 @@
                             <div class="col-md-12">
                             <div class="form-group">
                                     <label for="firstname">Họ và tên</label>
-                                    <input type="text" name="Ten_KH" id="Ten_KH" class="form-control" placeholder="">
-                                    @error('Ten_KH')
-                                        <span class="form-message">{{ $message }}</span>
-                                    @enderror
+                                    <input type="text" name="Ten_KH" id="fullname" class="form-control" placeholder="">
+                                    <span class="form-message"></span>
                                 </div>
                             </div>
 
@@ -59,7 +57,7 @@
                         
                         <div class="col-md-6">
                             <div class="form-group row">
-                                <label for="Gioi_Tinh" class="col-md-12 col-form-label ">{{ __('Gioi tinh') }}</label>
+                                <label for="Gioi_Tinh" class="col-md-12 col-form-label ">Giới Tính</label>
 
                                 <div class="col-md-12">
                                     <!-- <input id="Gioi_Tinh" type="text" value="1" class="form-control" name="Gioi_Tinh" required autocomplete="new-Gioi_Tinh"> -->
@@ -70,20 +68,21 @@
                                          
                                     </select>
                                 </div>
+                                <span class="form-message"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="DiaChi" class="col-md-12 col-form-label ">Địa Chỉ</label>
+                                {{-- <div class="col-md-12"> --}}
+                                    <input  type="text" class="form-control" name="DiaChi" id="address">
+                                {{-- </div> --}}
+                                <span class="form-message"></span>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group row">
-                                <label for="DiaChi" class="col-md-12 col-form-label ">{{ __('Dia Chi') }}</label>
-
-                                <div class="col-md-12">
-                                    <input id="DiaChi" type="text" class="form-control" name="DiaChi" required autocomplete="new-DiaChi">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group row">
-                                <label for="Quan" class="col-md-12 col-form-label ">{{ __('Quan') }}</label>
+                                <label for="Quan" class="col-md-12 col-form-label ">Quận</label>
 
                                 <div class="col-md-12">
                                     <!-- <input id="Quan" type="text" class="form-control" name="Quan" required autocomplete="new-Quan"> -->
@@ -108,13 +107,13 @@
                                     //     $qtp = DB::table('quan_to_phuong')->select('Id_Q', 'Id_P')->where("Id_Q", '=' , $Id_Q)->get();
                                     // ?>
                                 </div>
-
+                                <span class="form-message"></span>
                                 
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group row">
-                                <label for="Phuong" class="col-md-12 col-form-label ">{{ __('Phuong') }}</label>
+                                <label for="Phuong" class="col-md-12 col-form-label ">Phường</label>
                                     <div class="col-md-12">
                                         <!-- <input id="Phuong" type="text" class="form-control" name="Phuong" required autocomplete="new-Phuong"> -->
                                     <select name="Phuong" id="Phuong" class="form-control">
@@ -123,6 +122,7 @@
                                     
                                     </div>
                             </div>
+                            <span class="form-message"></span>
                         </div>
 
                             <div class="w-100"></div>
@@ -131,6 +131,7 @@
                                     <label class="mr-3"><input type="radio" name="optradio"> Tôi đồng ý với những yêu cầu </label>
                                 </div>
                             </div>
+                            <span class="form-message"></span>
                         </div>
                         <button type="submit" class="btn btn-primary py-3 px-4">Đăng ký</button>
                 </form><!-- END -->
@@ -138,3 +139,24 @@
         </div>
     </div>
 </section>
+<script src="js/js.js"></script>
+  <script>
+
+    Validator({
+      form: '#form-1',
+      rules:[
+        Validator.isRequired('#fullname'),
+        Validator.isEmail('#email'),
+        Validator.minLength('#password', 6),
+        Validator.minLength('#phone', 10),
+        Validator.minLength('#address', 15),
+        Validator.confirm('#password_confirm', function (){
+          return document.querySelector('#form-1 #password').value;
+        }, 'Mật khẩu nhập lại không chính xác'),
+      ],
+      onsubmit: function (data) {  
+        //   console.log(data);
+      }
+    });
+
+  </script>

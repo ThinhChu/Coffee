@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\KhachHang;
-
+use Illuminate\Support\Facades\Hash;
 class RegisterController extends Controller
 {
     //
@@ -12,16 +12,8 @@ class RegisterController extends Controller
         $d=array('title'=>'Đăng ký');
         return view("services.register", $d);
     }
-    function create(Request $r){
-        $r->validate(
-            [
-            'Ten_KH' => ['required','min:3','max:20'],
-            'DienThoai' => 'required|integer|min:10|max:10',
-            'DiaChi' =>['required','min:15', 'max:20'],
-            'password' =>['required','min:15', 'max:20'],
-            'email' => 'email|ends_with:@gmail.com'
-            ]
-        );
+    function create(Request $r)
+    {
         $created = new khachhang([ 
             'Ten_KH' => $r->get('Ten_KH'),
             'email' => $r->get('email'),
@@ -34,7 +26,7 @@ class RegisterController extends Controller
         ]);
 
         $created->save();
-        return redirect('/dang-nhap')->with('mssg', 'Account');
+        return redirect('/dang-nhap');
         
     }
 }

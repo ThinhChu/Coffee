@@ -12,7 +12,7 @@
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label for="email">Địa Chỉ Email</label>
-                                    <input type="email" id="email" class="form-control" name="email"  required autocomplete="email" placeholder="">
+                                    <input type="email" id="email" class="form-control" name="email" >
                                     <span class="form-message"></span>
                                 </div>
                             </div>
@@ -22,7 +22,7 @@
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label for="password">Mật khẩu</label>
-                                <input type="password" id="password" class="form-control" name="password" required autocomplete="current-password" placeholder="">
+                                <input type="password" id="password" class="form-control" name="password" autocomplete="current-password" placeholder="">
                                 <span class="form-message"></span>
                             </div>
                         </div>
@@ -41,7 +41,8 @@
         </div>
     </div>
 </section>
-<script src="js/js.js"></script>
+
+    <script src="js/js.js"></script>
   <script>
 
     Validator({
@@ -49,7 +50,10 @@
       rules:[
         Validator.isEmail('#email'),
         Validator.minLength('#password', 6),
-      ]
+      ],
+      onsubmit: function (data) {  
+        // console.log(data);
+      }
     });
 
   </script>

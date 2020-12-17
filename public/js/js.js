@@ -1,13 +1,16 @@
 function Validator (options){
 
-    var formElement = document.querySelector(options.form);
-
     var SelectorRules = {};
-    
 
     function Validate(inputElement, rule){
+        
         var errorMs = rule.test(inputElement.value);
+        var rules = SelectorRules[rule.selector];
         var errorForm = inputElement.parentElement.querySelector('.form-message');
+            for (let i = 0; i < rules.length; ++i) {
+                errorMs = rules[i](inputElement.value);
+                if(errorMs) break;
+            }
             if(errorMs){
                 errorForm.innerText = errorMs;
                 inputElement.parentElement.classList.add('invalid');
@@ -15,13 +18,39 @@ function Validator (options){
                 errorForm.innerText = '';
                 inputElement.parentElement.classList.remove('invalid');
             }
+
+            return !errorMs;
     }
     
-
+    var formElement = document.querySelector(options.form);
     if(formElement){
+        formElement.onsubmit = function (e) { 
+            e.preventDefault();
+            var isFormvalid = true;
+
+            options.rules.forEach(function (rule) {  
+                var inputElement = formElement.querySelector(rule.selector);
+                var isValid = Validate(inputElement, rule);
+                if(!isValid){
+                    isFormvalid = false;
+                }
+            });
+            if(isFormvalid){
+                if (typeof options.onSubmit === 'function') {
+                    var enableInputs = formElement.querySelectorAll('[name]');
+                    var formValues = Array.from(enableInputs).reduce(function (values, input){
+                        return (values[input.name] = input.value) && values;
+                    }, {});
+                    options.onSubmit(formValues);
+                } else {
+                    formElement.submit();
+                }
+            }
+        }
         options.rules.forEach(function (rule){
 
             //lưu
+
             // SelectorRules[rule.selector] = rule.test;
             if(Array.isArray(SelectorRules[rule.selector])){
                 SelectorRules[rule.selector].push(rule.test);
