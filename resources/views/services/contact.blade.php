@@ -1,5 +1,6 @@
 @extends('../layoutchild')
 @include('services.backG')
+<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
 <section class="ftco-section contact-section" style="    background-image: url(../images/vector.png);
     background-size: cover;
     background-repeat: no-repeat;">
@@ -28,30 +29,87 @@
 			</div>
 			<div class="col-md-1"></div>
 			<div class="col-md-6 ftco-animate">
-			<form action="" method="POST" class="contact-form">			
-			@csrf
-            	<div class="row">
-            		<div class="col-md-6">
-	                <div class="form-group">
-	                  <input type="text" class="form-control" name="name" placeholder="Họ và tên">
-	                </div>
-                </div>
-                <div class="col-md-6">
-	                <div class="form-group">
-	                  <input type="email" class="form-control" name="email" placeholder="Địa chỉ Email">
-	                </div>
-	                </div>
-              </div>
-              <div class="form-group">
-                <input type="text" class="form-control" name="tieude" placeholder="Tiêu đề">
-              </div>
-              <div class="form-group">
-                <textarea name="content" id="" cols="30" rows="7" class="form-control" placeholder="Nội dung"></textarea>
-              </div>
-              <div class="form-group">
-                <input type="submit" value="Gửi" class="btn btn-primary py-3 px-5">
-              </div>
-            </form>
+			<form class="contact-form" id="guimail">			
+				@csrf
+					<div class="row">
+						<div class="col-md-6">
+						<div class="form-group">
+						<input type="text" class="form-control" name="name" id="name" placeholder="Họ và tên">
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="form-group">
+						<input type="email" class="form-control" name="email" id="email" placeholder="Địa chỉ Email">
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<input type="text" class="form-control" name="tieude" id="tieude" placeholder="Tiêu đề">
+				</div>
+				<div class="form-group">
+					<textarea name="content" id="content" cols="30" rows="7" id="content" class="form-control" placeholder="Nội dung"></textarea>
+				</div>
+				<div class="form-group">
+					<input type="submit" value="Gửi" class="btn btn-primary py-3 px-5">
+				</div>
+			</form>
+			<script>
+				
+				// $('#guimail').submit(function(e) {
+				// 	let name = $("#name").val();
+				// 	let email = $("#email").val();
+				// 	let tieude = $("#tieude").val();
+				// 	let content = $("#content").val();
+				// 	$.ajax({
+				// 		type: "POST",
+				// 		url: "{{route('mail.add')}}",
+				// 		data: {
+				// 			"_token": "{{ csrf_token() }}",
+				// 			name:name,
+				// 			email:email,
+				// 			tieude:tieude,
+				// 			content:content,
+				// 		},
+				// 		success: function(response) {
+				// 			if (response) {
+				// 				$("#name").val('');
+				// 				$("#email").val('');
+				// 				$("#tieude").val('');
+				// 				$("#content").val('');
+				// 				alertify.success('Yêu cầu của bạn đã được gửi');
+				// 			}
+				// 		}
+				// 	});
+				// });
+				$('#guimail').submit(function(e) {
+					e.preventDefault();
+					
+					let name = $("#name").val();
+					let email = $("#email").val();
+					let tieude = $("#tieude").val();
+					let content = $("#content").val();
+					$.ajax({
+						type: "POST",
+						url: "{{route('mail.add')}}",
+						data: {
+							"_token": "{{ csrf_token() }}",
+							name:name,
+							email:email,
+							tieude:tieude,
+							content:content,
+						},
+						success: function(response) {
+							if (response) {
+								$("#name").val('');
+								$("#email").val('');
+								$("#tieude").val('');
+								$("#content").val('');
+								alertify.success('Yêu cầu của bạn đã được gửi');
+							}
+						}
+					});
+				});
+			</script>
 			</div>
 		</div>
 		<div class="row">

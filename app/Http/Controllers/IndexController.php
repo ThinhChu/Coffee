@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Mail;
+// use App\Mail\TestMail;
 class IndexController extends Controller
 {
     //
@@ -32,6 +33,7 @@ class IndexController extends Controller
             $mail->from($req->email,$req->name);
             $mail->subject('Tư vấn');
         });
+        return redirect('/');
     }
      function menu(){
          $d=array('title'=>'Thực đơn');
@@ -41,5 +43,20 @@ class IndexController extends Controller
      function services(){
          $d=array('title'=>'Dịch vụ');
          return view("services.serviceschild", $d);
+     }
+
+     function sendEmail(Request $req)
+     {
+         $details = [
+            'name' => $req->name,
+            'email' => $req->email,
+            'tieude' =>$req->tieude,
+            'content' => $req->content,
+         ];
+
+         Mail::send('emails.reply', $details, function($message) use ($details) {
+            $message->to("burncoffeeonline@gmail.com")
+            ->subject($details['tieude']);
+          });
      }
 }

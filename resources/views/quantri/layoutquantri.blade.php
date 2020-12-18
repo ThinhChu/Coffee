@@ -101,7 +101,7 @@
                                         <span class="quantity">{{ $sl }}</span>
                                         <div class="mess-dropdown js-dropdown">
                                             <div class="mess__title">
-                                                <p>You have 2 news message</p>
+                                                <p>Bình luận mới có : {{ $sl }}</p>
                                             </div>
                                             @foreach ($binhluan as $bl)
                                                 @if ($bl->TT_TB == 1)
@@ -144,49 +144,64 @@
                                                 @endif
                                             @endforeach
                                             <div class="mess__footer">
-                                                <a href="{{ route('binhluan.index')}}">View all messages</a>
+                                                <a href="{{ route('binhluan.index')}}">Xem</a>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="noti__item js-item-menu">
-                                        <i class="zmdi zmdi-notifications"></i>
-                                        <span class="quantity">3</span>
-                                        <div class="notifi-dropdown js-dropdown">
-                                            <div class="notifi__title">
-                                                <p>You have 3 Notifications</p>
+                                        <?php
+                                            $hoadon = DB::table('hoadon')->limit('3')->orderBy('Id_HD', 'DESC')->get();
+                                            $slhd = DB::table('hoadon')->where('TT_TB', '=', 1)->get();
+                                            $sls = count($slhd);
+                                        ?>
+                                        <i class="zmdi zmdi-comment-more"></i>
+                                        <span class="quantity">{{ $sls }}</span>
+                                        <div class="mess-dropdown js-dropdown">
+                                            <div class="mess__title">
+                                                <p>Đơn hàng mới có : {{ $sls }}</p>
                                             </div>
-                                            <div class="notifi__item">
-                                                <div class="bg-c1 img-cir img-40">
-                                                    <i class="zmdi zmdi-email-open"></i>
-                                                </div>
-                                                <div class="content">
-                                                    <p>You got a email notification</p>
-                                                    <span class="date">April 12, 2018 06:50</span>
-                                                </div>
-                                            </div>
-                                            <div class="notifi__item">
-                                                <div class="bg-c2 img-cir img-40">
-                                                    <i class="zmdi zmdi-account-box"></i>
-                                                </div>
-                                                <div class="content">
-                                                    <p>Your account has been blocked</p>
-                                                    <span class="date">April 12, 2018 06:50</span>
-                                                </div>
-                                            </div>
-                                            <div class="notifi__item">
-                                                <div class="bg-c3 img-cir img-40">
-                                                    <i class="zmdi zmdi-file-text"></i>
-                                                </div>
-                                                <div class="content">
-                                                    <p>You got a new file</p>
-                                                    <span class="date">April 12, 2018 06:50</span>
-                                                </div>
-                                            </div>
-                                            <div class="notifi__footer">
-                                                <a href="#">All notifications</a>
+                                            @foreach ($hoadon as $bl)
+                                                @if ($bl->TT_TB == 1)
+                                                    <?php $kh = DB::table('khachhang')->where('Id_Kh', '=', $bl->Id_KH)->first();?>
+                                                    <form action="/cpHD/{{ $bl->Id_HD }}" method="post">
+                                                        @csrf
+                                                        <input type="text" style="display: none;" name="TT_TB" value="2">
+                                                        <input type="text" style="display: none;" name="Id_TT" value="{{ $bl->Id_HD }}">
+                                                        <button type="submit" style="width: 100%">
+                                                            <div class="mess__item active1">
+                                                                <div class="image img-cir img-40">
+                                                                    <img src="assets/images/icon/avatar-06.jpg" alt="Michelle Moreno" />
+                                                                </div>
+                                                                <div class="content">
+                                                                    <h6>{{$kh->Ten_KH}}</h6>
+                                                                    <p>{{ $bl->Ngay_Dang }}</p>
+                                                                </div>
+                                                            </div>
+                                                        </button>
+                                                    </form>
+                                                @else
+                                                    <?php $kh = DB::table('khachhang')->where('Id_Kh', '=', $bl->Id_KH)->first();?>
+                                                    <form action="/cpHD/{{ $bl->Id_HD }}" method="post">
+                                                        @csrf
+                                                        <input type="text" style="display: none;" name="Id_TT" value="{{ $bl->Id_HD }}">
+                                                        <button type="submit" style="width: 100%">
+                                                            <div class="mess__item">
+                                                                <div class="image img-cir img-40">
+                                                                    <img src="assets/images/icon/avatar-06.jpg" alt="Michelle Moreno" />
+                                                                </div>
+                                                                <div class="content">
+                                                                    <h6>{{$kh->Ten_KH}}</h6>
+                                                                    <p>{{ $bl->Ngay_Dang }}</p>
+                                                                </div>
+                                                            </div>
+                                                        </button>
+                                                    </form>
+                                                @endif
+                                            @endforeach
+                                            <div class="mess__footer">
+                                                <a href="{{ route('hoadon.index')}}">Xem</a>
                                             </div>
                                         </div>
-                                    </div>
                                 </div>
                                 <div class="account-wrap">
                                     <div class="account-item clearfix js-item-menu">

@@ -29,6 +29,7 @@ class ThanhtoanController extends Controller
             'Voucher' => $request->get('Voucher'),
             'TrangThai' => $request->get('TrangThai'),
             'Id_KH' => $request->get('Id_KH'),
+            'TT_TB' => $request->get('TT_TB'),
         ]);
         $hd->save();
     

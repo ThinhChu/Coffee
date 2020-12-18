@@ -82,6 +82,13 @@ class HoadonController extends Controller
         //
     }
 
+    public function upHD(Request $request, $id)
+    {
+        $bl = hoadon::find($id);
+        $bl->TT_TB = $request->get('TT_TB');
+        $bl->save();
+        return redirect('hoadon');
+    }
     /**
      * Remove the specified resource from storage.
      *

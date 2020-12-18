@@ -51,6 +51,8 @@ Route::get('/dang-ky', 'RegisterController@index');
 
 Route::post('/create', 'RegisterController@create');
 
+Route::post('guiemail', 'IndexController@sendEmail')->name('mail.add');
+
 Route::get('/dang-nhap', 'DangnhapController@index');
 
 Route::get('/ho-so', 'ProfileController@index');
@@ -96,6 +98,7 @@ Route::group(['middleware' => ['protectPage']], function () {
         );
     Route::resource('tags', 'TagsController');
     Route::resource('hoadon', 'HoadonController');
+        Route::post('cpHD/{id}', 'HoadonController@upHD');
     Route::get('hoadon/{id}/detail', 'HoadonController@detail');
     Route::get('detail/{id}', 'HoadonController@deletedetail');
     Route::get('/qt', function(){
@@ -125,6 +128,8 @@ Route::get('/list',  'CtController@index')->name('ct.index');
 
 Route::post('/load-comment',  'BlogController@loadCm');
 Route::post('/comment',  'BlogController@commentAjax')->name('cm.add');
+
+Route::get('/sendmail', 'IndexController@sendEmail');
 
 
 

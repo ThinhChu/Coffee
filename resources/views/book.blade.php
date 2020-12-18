@@ -1,105 +1,85 @@
-{{-- <section class="ftco-appointment">
-	<div class="overlay"></div>
-<div class="container-wrap">
-	<div class="row no-gutters d-md-flex align-items-center">
-		<div class="col-md-6 d-flex align-self-stretch">
-			<div id="map"></div>
-		</div>
-		<div class="col-md-6 appointment ftco-animate">
-			<h3 class="mb-3">Book a Table</h3>
-			<form action="#" class="appointment-form">
-				<div class="d-md-flex">
-					<div class="form-group">
-						<input type="text" class="form-control" placeholder="Họ Tên">
+<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+<section class="ftco-section contact-section" style="    background-image: url(../images/vector.png);
+    background-size: cover;
+    background-repeat: no-repeat;">
+	<h2 style="text-align: center">Liên hệ ngay để được tư vấn </h2>
+
+	<div class="container mt-5">
+		<div class="row block-9">
+			<div class="col-md-4 contact-info ftco-animate">
+				<div class="row">
+					<div class="col-md-12 mb-4">
+						<h2 class="h4">Thông tin cá nhân</h2>
 					</div>
-					<div class="form-group ml-md-4">
-						<input type="number" class="form-control" placeholder="Số người">
+					<div class="col-md-12 mb-3">
+						<p><span>Địa chỉ:</span> 40 Chu Thiên, P. Hiệp Tân, Q.Tân Phú</p>
 					</div>
-				</div>
-				<div class="d-md-flex">
-					<div class="form-group">
-						<div class="input-wrap">
-					<div class="icon"><span class="ion-md-calendar"></span></div>
-					<input type="text" class="form-control appointment_date" placeholder="Ngày tới">
-				</div>
+					<div class="col-md-12 mb-3">
+						<p><span>Số điện thoại :</span> <a href="tel://1234567920">070 8565 9621 </a></p>
 					</div>
-					<div class="form-group ml-md-4">
-						<div class="input-wrap">
-					<div class="icon"><span class="ion-ios-clock"></span></div>
-					<input type="text" class="form-control appointment_time" placeholder="Giờ tới">
-				</div>
+					<div class="col-md-12 mb-3">
+						<p><span>Email:</span> <a href="mailto:info@yoursite.com">phuong@gmail.com</a></p>
 					</div>
-					<div class="form-group ml-md-4">
-						<input type="text" class="form-control" placeholder="Điện thoại">
+					<div class="col-md-12 mb-3">
+						<p><span>Website:</span> <a href="https://burncoffee.online">burncoffee.online</a></p>
 					</div>
 				</div>
-				<div class="d-md-flex">
-					<div class="form-group ">
-						  <textarea name="" id="" cols="30" rows="2" class="form-control" placeholder="Ghi chú"></textarea>
+			</div>
+			<div class="col-md-1"></div>
+			<div class="col-md-6 ftco-animate">
+			<form class="contact-form" id="guimail">			
+				@csrf
+					<div class="row">
+						<div class="col-md-6">
+						<div class="form-group">
+						<input type="text" class="form-control" name="name" id="name" placeholder="Họ và tên">
+						</div>
 					</div>
-					<div class="form-group ml-md-4">
-						<input type="submit" value="Gửi" class="btn btn-white py-3 px-4">
+					<div class="col-md-6">
+						<div class="form-group">
+						<input type="email" class="form-control" name="email" id="email" placeholder="Địa chỉ Email">
+						</div>
 					</div>
+				</div>
+				<div class="form-group">
+					<input type="text" class="form-control" name="tieude" id="tieude" placeholder="Tiêu đề">
+				</div>
+				<div class="form-group">
+					<textarea name="content" id="content" cols="30" rows="7" id="content" class="form-control" placeholder="Nội dung"></textarea>
+				</div>
+				<div class="form-group">
+					<input type="submit" value="Gửi" class="btn btn-primary py-3 px-5">
 				</div>
 			</form>
-		</div>    			
-	</div>
-</div>
-</section> --}}
-<section class="ftco-appointment ftco-section contact-section">
-	<div class="container mt-5">
-		<div class="row justify-content-center mb-5 pb-3">
-			<div class="col-md-7 heading-section ftco-animate text-center">
-			  <h2 class="mb-4">Liên hệ</h2>
-			  <p>Nhập thông tin để được hỗ trợ sớm nhất.</p>
+			<script>
+				$('#guimail').submit(function(e) {
+					e.preventDefault();
+					
+					let name = $("#name").val();
+					let email = $("#email").val();
+					let tieude = $("#tieude").val();
+					let content = $("#content").val();
+					$.ajax({
+						type: "POST",
+						url: "{{route('mail.add')}}",
+						data: {
+							"_token": "{{ csrf_token() }}",
+							name:name,
+							email:email,
+							tieude:tieude,
+							content:content,
+						},
+						success: function(response) {
+							$("#name").val('');
+							$("#email").val('');
+							$("#tieude").val('');
+							$("#content").val('');
+							alertify.success('Yêu cầu của bạn đã được gửi');
+						}
+					});
+				});
+			</script>
 			</div>
 		</div>
-	  <div class="row block-9">
-				  <div class="col-md-4 contact-info ftco-animate">
-					  <div class="row">
-						  <div class="col-md-12 mb-4">
-				<h2 class="h4">Thông tin cá nhân</h2>
-			  </div>
-			  <div class="col-md-12 mb-3">
-				<p><span>Địa chỉ :</span> 40 Chu Thiên, p. Hiệp Tân, q.Tân Phú</p>
-			  </div>
-			  <div class="col-md-12 mb-3">
-				<p><span>Số điện thoại :</span> <a href="tel://0708368592">070 836 8592</a></p>
-			  </div>
-			  <div class="col-md-12 mb-3">
-				<p><span>Email:</span> <a href="mailto:info@yoursite.com">burncoffee@gmail.com</a></p>
-			  </div>
-			  <div class="col-md-12 mb-3">
-				<p><span>Website:</span> <a href="#">burncoffee.vn</a></p>
-			  </div>
-					  </div>
-				  </div>
-				  <div class="col-md-1"></div>
-		<div class="col-md-6 ftco-animate">
-		  <form action="#" class="contact-form">
-			  <div class="row">
-				  <div class="col-md-6">
-				  <div class="form-group">
-					<input type="text" class="form-control" placeholder="Họ và tên">
-				  </div>
-			  </div>
-			  <div class="col-md-6">
-				  <div class="form-group">
-					<input type="text" class="form-control" placeholder="Địa chỉ Email">
-				  </div>
-				  </div>
-			</div>
-			<div class="form-group">
-			  <input type="text" class="form-control" placeholder="Tiêu đề">
-			</div>
-			<div class="form-group">
-			  <textarea name="" id="" cols="30" rows="7" class="form-control" placeholder="Nội Dung"></textarea>
-			</div>
-			<div class="form-group">
-			  <input type="submit" value="Gửi" class="btn btn-primary py-3 px-5">
-			</div>
-		  </form>
-		</div>
-	  </div>
 	</div>
-  </section>
+</section>

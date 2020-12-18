@@ -6,7 +6,7 @@
 					<span class="subheading" style="margin-bottom: 5px">Burn Coffee</span>
 					<h2 class="mb-4">Thực đơn</h2>
 					<p class="mb-4 color-p">Với hướng vị cà phê đậm đặc, Burn Coffee đã thu hút được rất nhiều tín đồ về thức uống mạnh mẽ này. Chính vì thế những thức uống tại Burn Coffee luôn được khách hàng đánh giá tốt, đa dạng về thức uống, vẫn giữ nét truyền thống đậm đặc của cà phê Việt Nam.</p>
-					<p><a href="#" class="btn btn-primary btn-outline-primary px-4 py-3">Xem thực đơn</a></p>
+					<p><a href="/san-pham" class="btn btn-primary btn-outline-primary px-4 py-3">Xem thực đơn</a></p>
 				</div>
 			</div>
 			<div class="col-md-6">

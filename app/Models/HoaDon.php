@@ -23,6 +23,7 @@ class HoaDon extends Model
         'Voucher',
         'PT_TT',
         'TrangThai',
-        'Id_KH',   
+        'Id_KH',
+        'TT_TB',   
     ];
 }

@@ -120,6 +120,7 @@
 					<input type="text" name="TrangThai" id="PT_TT" style="display: none;">
 					<input type="text" name="Id_KH" value="{{ Session::get('khachhang')['Id_KH'] }}" style="display: none;">
 					<input type="date" name="Ngay_Dang" id="datePicker" style="display: none;">
+					<input type="text" name="TT_TB" value="1" style="display: none;">
 					<script>
 						document.getElementById('datePicker').valueAsDate = new Date();
 					</script>

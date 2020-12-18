@@ -8,7 +8,7 @@
 					<span class="subheading">Burn Coffee xin chào </span>
 					<h1 class="mb-4">Cà phê rang xay đậm chất Việt Nam</h1>
 					<p class="mb-4 mb-md-5">Cà phê sạch khi rang với thời gian đủ và đạt đến nhiệt độ thích hợp sẽ cho chúng ta ly cà phê có vị đắng thanh xen lẫn vị chua nhẹ nhàng, rất tinh tế do yếu tố của các thành phần acid ẩn chứa đằng sau của vị đắng trong hạt cà phê</p>
-					<p><a href="#" class="btn btn-primary p-3 px-xl-4 py-xl-3">Đặt món</a> <a href="#" class="btn btn-white btn-outline-white p-3 px-xl-4 py-xl-3">Xem chi tiết</a></p>
+					<p><a href="/san-pham" class="btn btn-primary p-3 px-xl-4 py-xl-3">Đặt món</a> <a href="/gioi-thieu" class="btn btn-white btn-outline-white p-3 px-xl-4 py-xl-3">Xem chi tiết</a></p>
 				</div>
 
 			</div>
@@ -24,7 +24,7 @@
 					<span class="subheading">Burn Coffee xin chào</span>
 					<h1 class="mb-4">Cách pha cà phê truyền thống người Việt</h1>
 					<p class="mb-4 mb-md-5">Cà phê pha phin – một loại thức uống với hương vị thơm ngon đặc trưng, đậm đà bản sắc Việt Nam không quốc gia nào có được</p>
-					<p><a href="#" class="btn btn-primary p-3 px-xl-4 py-xl-3">Đặt món</a> <a href="#" class="btn btn-white btn-outline-white p-3 px-xl-4 py-xl-3">Xem chi tiết</a></p>
+					<p><a href="/san-pham" class="btn btn-primary p-3 px-xl-4 py-xl-3">Đặt món</a> <a href="/gioi-thieu" class="btn btn-white btn-outline-white p-3 px-xl-4 py-xl-3">Xem chi tiết</a></p>
 				</div>
 
 			</div>
