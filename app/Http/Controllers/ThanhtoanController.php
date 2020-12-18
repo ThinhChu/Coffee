@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Mail;
 use Illuminate\Http\Request;
 use App\Models\HoaDon;
 use App\Models\GioHang;
@@ -53,6 +53,14 @@ class ThanhtoanController extends Controller
             $kh->save();
         }
 
+        $details = [
+            'name' => $request->session()->get('khachhang')['Ten_KH'],
+            'email' => $request->session()->get('khachhang')['email'],
+        ];
+        Mail::send('emails.reply', $details, function($message) use ($details) {
+            $message->to($details['email'])
+            ->subject('Đơn hàng của bạn đã được xác nhận');
+        });
         
         return redirect('/');
     }
