@@ -28,29 +28,30 @@
 			</div>
 			<div class="col-md-1"></div>
 			<div class="col-md-6 ftco-animate">
-				<form action="#" class="contact-form">
-					<div class="row">
-						<div class="col-md-6">
-							<div class="form-group">
-								<input type="text" class="form-control" placeholder="Họ và tên">
-							</div>
-						</div>
-						<div class="col-md-6">
-							<div class="form-group">
-								<input type="text" class="form-control" placeholder="Địa chỉ Email">
-							</div>
-						</div>
-					</div>
-					<div class="form-group">
-						<input type="text" class="form-control" placeholder="Tiêu đề">
-					</div>
-					<div class="form-group">
-						<textarea name="" id="" cols="30" rows="7" class="form-control" placeholder="Nội dung"></textarea>
-					</div>
-					<div class="form-group">
-						<input type="submit" value="Gửi" class="btn btn-primary py-3 px-5">
-					</div>
-				</form>
+			<form action="" method="POST" class="contact-form">			
+			@csrf
+            	<div class="row">
+            		<div class="col-md-6">
+	                <div class="form-group">
+	                  <input type="text" class="form-control" name="name" placeholder="Họ và tên">
+	                </div>
+                </div>
+                <div class="col-md-6">
+	                <div class="form-group">
+	                  <input type="email" class="form-control" name="email" placeholder="Địa chỉ Email">
+	                </div>
+	                </div>
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" name="tieude" placeholder="Tiêu đề">
+              </div>
+              <div class="form-group">
+                <textarea name="content" id="" cols="30" rows="7" class="form-control" placeholder="Nội dung"></textarea>
+              </div>
+              <div class="form-group">
+                <input type="submit" value="Gửi" class="btn btn-primary py-3 px-5">
+              </div>
+            </form>
 			</div>
 		</div>
 		<div class="row">

@@ -18,6 +18,7 @@ Route::get('/gioi-thieu', "IndexController@gioithieu");
 Route::get("/thuc-don","IndexController@menu");
 Route::get("/dich-vu","IndexController@services");
 Route::get("/lien-he","IndexController@lienhe");
+Route::post("/lien-he","IndexController@postlienhe");
 
 Route::get("/san-pham","ProductController@product");
 Route::get("/san-pham-{Id_SP}","ProductController@detailproduct");
