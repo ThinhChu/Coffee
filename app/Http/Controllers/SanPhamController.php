@@ -122,11 +122,14 @@ class SanPhamController extends Controller
                 $sanpham->Tags = $request->get('Tags');
 
                 if ($request->hasfile('urlHinh1')) {
+                    $destination_path = 'images';
                     $file = $request->file('urlHinh1');
-                    $extension = $file->getClientOriginalExtension();
-                    $filename = time() .'.'. $extension;
-                    $file->move('images/', $filename);
-                    $sanpham->urlHinh1 = $filename;
+                    $file_name = $file->getClientOriginalName();
+                    $file->move('images/', $file_name);
+                    $sanpham->urlHinh1 = $file_name;
+                }else{
+                    return $request;
+                    $sanpham->urlHinh1 = '';
                 }
         
             $sanpham ->save();

@@ -52,7 +52,7 @@
                                 <div class="row form-group">
                                     <div class="col-12">
                                         <label class="form-check-label mb-2" for="exampleCheck1">Mô tả sản phẩm</label>
-                                        <textarea class="form-control" height="50px" name="MoTa" id="" cols="15" rows="9" required></textarea>
+                                        <textarea class="form-control" height="50px" name="MoTa"  cols="15" rows="9"></textarea>
                                     </div>
                                 </div>
                                 <div class="row form-group">
@@ -67,24 +67,10 @@
                                     </div>
                                 </div>
                                 <div class="row form-group">
-                                    <div class="col-4">
+                                    <div class="col-12">
                                         <label class="form-check-label mb-2" for="exampleCheck1">Hình 1</label>
                                         <div class="col-12 col-md-9">
                                             <input type="file" id="file-input" name="urlHinh1" class="form-control-file" required>
-                                        </div>
-                                    </div>
-            
-                                    <div class="col-4">
-                                        <label class="form-check-label mb-2" for="exampleCheck1">Hình 2</label>
-                                        <div class="col-12 col-md-9">
-                                            <input type="file" id="file-input" name="urlHinh2" class="form-control-file">
-                                        </div>
-                                    </div>
-            
-                                    <div class="col-4">
-                                        <label class="form-check-label mb-2" for="exampleCheck1">Hình 3</label>
-                                        <div class="col-12 col-md-9">
-                                            <input type="file" id="file-input" name="urlHinh3" class="form-control-file">
                                         </div>
                                     </div>
                                 </div>

@@ -51,11 +51,11 @@ class TintucController extends Controller
 
 
         if ($request->hasfile('urlHinh')) {
+            $destination_path = 'images';
             $file = $request->file('urlHinh');
-            $extension = $file->getClientOriginalExtension();
-            $filename = time() .'.'. $extension;
-            $file->move('images/', $filename);
-            $tintuc->urlHinh = $filename;
+            $file_name = $file->getClientOriginalName();
+            $file->move('images/', $file_name);
+            $tintuc->urlHinh = $file_name;
         }else{
             return $request;
             $tintuc->urlHinh = '';

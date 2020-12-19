@@ -52,7 +52,7 @@
                                 <div class="row form-group">
                                     <div class="col-6">
                                         <label class="form-check-label mb-2" for="exampleCheck1">Ngày Đăng</label>
-                                        <input type="date" name="Ngay_Dang"  class="form-control fc-datepicker" placeholder="MM/DD/YY">
+                                        <input type="date" name="Ngay_Dang"  class="form-control fc-datepicker" placeholder="dd/mm/YY">
                                     </div>
             
                                     <div class="col-6">

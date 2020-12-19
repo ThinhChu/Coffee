@@ -63,27 +63,11 @@
                                     </div>
                                 </div>
                                 <div class="row form-group">
-                                    <div class="col-4">
+                                    <div class="col-12">
                                         <label class="form-check-label mb-2" for="exampleCheck1">Hình 1</label>
                                         <div class="col-12 col-md-9">
                                             <input type="file" id="urlHinh1" value="{{ $row->urlHinh1}}"  name="urlHinh1" class="form-control-file">
                                             <img src="images/{{ $row->urlHinh1}}" alt="">
-                                        </div>
-                                    </div>
-            
-                                    <div class="col-4">
-                                        <label class="form-check-label mb-2" for="exampleCheck1">Hình 2</label>
-                                        <div class="col-12 col-md-9">
-                                            <input type="file" id="urlHinh2" name="urlHinh2"  value="{{ $row->urlHinh2 }}" class="form-control-file">
-                                            <img src="images/{{ $row->urlHinh2}}" alt="">
-                                        </div>
-                                    </div>
-            
-                                    <div class="col-4">
-                                        <label class="form-check-label mb-2" for="exampleCheck1">Hình 3</label>
-                                        <div class="col-12 col-md-9">
-                                            <input type="file" id="urlHinh3" name="urlHinh3" value="{{ $row->urlHinh3 }}" class="form-control-file">
-                                            <img src="images/{{ $row->urlHinh3}}" alt="">
                                         </div>
                                     </div>
                                 </div>

@@ -30,8 +30,6 @@
                     <th>Giá</th>
                     <th>Giá Khuyễn mãi</th>
                     <th>Hình 1</th>
-                    <th>Hình 2</th>
-                    <th>Hình 3</th>
                     <th>Số lượng</th>
                     <th>Thứ tự</th>
                     <th>Ẩn hiện</th>
@@ -49,8 +47,6 @@
                         <td>{{ $row->Gia }}</td>
                         <td>{{ $row->Gia_KM }}</td>
                         <td><img width="50px" height="50px" src="images/{{ $row->urlHinh1 }}" alt=""></td>
-                        <td><img width="50px" height="50px" src="images/{{ $row->urlHinh2 }}" alt=""></td>
-                        <td><img width="50px" height="50px" src="images/{{ $row->urlHinh3 }}" alt=""></td>
                         <td>{{ $row->So_Luong }}</td>
                         <td>{{ $row->ThuTu }}</td>
                         <td>{{ $row->AnHien }}</td>

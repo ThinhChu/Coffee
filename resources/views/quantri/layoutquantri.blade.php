@@ -1,4 +1,3 @@
-{{-- @if(Session::has('nhanvien')) --}}
 <!DOCTYPE html>
 <html lang="en">
 

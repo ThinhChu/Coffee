@@ -157,11 +157,12 @@
                 <?php
                     $kh = DB::table('khachhang')->select('Id_KH', 'Tich_diem')->where('Id_KH', '=', Session::get('khachhang')['Id_KH'])->first();
                     $diemtich = ($kh->Tich_diem / 1000)/3000 * 100;
+                    $diemcodc = $kh->Tich_diem / 1000;
                 ?>
-                <span class="rewards_new_header_tab_item_point">Điểm Tích Được : {{ $kh->Tich_diem }}</span></a>
+                <span class="rewards_new_header_tab_item_point">Điểm Tích Được : {{ $diemcodc ?? 0 }} Bean</span></a>
                 
                 <div class="progress">
-                    <p class="kl">1000 Bean</p>
+                    <p class="kl">{{ $diemcodc ?? 0 }} Bean</p>
                     <div id="ctc" class="progress-bar" role="progressbar" style="width: {{ $diemtich }}%" aria-valuenow="{{ $diemtich }}" aria-valuemin="0" aria-valuemax="3000"></div>
                 </div>
                 <script>

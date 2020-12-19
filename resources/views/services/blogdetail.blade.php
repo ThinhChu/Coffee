@@ -103,7 +103,7 @@
                         success: function (response) {
                           if(response){
                             $("#Noi_Dung").val('');
-                            $('#comment_show').prepend('<li class="comment"> <div class="vcard bio"><img src="images/user.png" alt="Image placeholder"></div><div class="comment-body" ><h3>{{$nv->Ten_KH}}</h3><div class="meta">{{$cm->updated_at}}</div><p>'+ response.Noi_Dung +'</p></div></li>');
+                            $('#comment_show').prepend('<li class="comment"> <div class="vcard bio"><img src="images/user.png" alt="Image placeholder"></div><div class="comment-body" ><h3>{{Session::get("khachhang")["Ten_KH"]}}</h3><div class="meta">{{$cm->updated_at ?? ''}}</div><p>'+ response.Noi_Dung +'</p></div></li>');
                             alertify.success('Bình luận đã được thêm');
                           }
                         }
