@@ -36,6 +36,7 @@
                             </div>
                         @endif
                         <button type="submit" class="btn btn-primary py-3 px-4">Đăng nhập</button>
+                        <a href="/quenmk" class="text-right ml-3">Quên mật khẩu</a>
                 </form><!-- END -->
             </div>
         </div>

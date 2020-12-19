@@ -1,3 +1,8 @@
-<h1>Hello {{ $name }}</h1>
-<h3>{{ $name }}</h3>
-<h3>Thank You</h3>
+<h2>Tôi là {{ $detail['name'] }}</h2>
+<p>
+{{ $detail['tieude'] }}
+</p>
+<br>
+<p>
+{{ $detail['content'] }}
+</p>

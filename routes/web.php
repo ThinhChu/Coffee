@@ -118,12 +118,17 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/logout', 'Auth\LoginController@logout');
+Route::get('/quenmk', 'DangnhapController@showquenmk');
+Route::post('/postquenmk', 'DangnhapController@emailQmk')->name('qmk.add');
+Route::get('/laylaimk/{id}', 'DangnhapController@showlaymk');
+Route::post('/postlaylaimk', 'DangnhapController@updateMK');
 
 
 Route::post('/test',  'CtController@addcart')->name('ct.add');
 Route::post('/acdt',  'CtController@addcartdt')->name('ctdt.add');
 Route::get('/del/{id}',  'CtController@deleteCart');
 Route::post('/upd/{id}',  'CtController@upCart');
+Route::post('/updb/{id}',  'CtController@upCartB');
 Route::get('/list',  'CtController@index')->name('ct.index');
 
 Route::post('/load-comment',  'BlogController@loadCm');

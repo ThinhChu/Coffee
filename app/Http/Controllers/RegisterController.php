@@ -19,7 +19,7 @@ class RegisterController extends Controller
             'Ten_KH' => $r->get('Ten_KH'),
             'email' => $r->get('email'),
             'DienThoai' => $r->get('DienThoai'),
-            'password' => Hash::make($r->get('password')),
+            'password' => bcrypt($r->get('password')),
             'DiaChi' => $r->get('DiaChi'),
             'Gioi_Tinh' => $r->get('Gioi_Tinh'),
             'Quan'=> $r->get('Quan'),

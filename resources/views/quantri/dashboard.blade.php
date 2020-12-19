@@ -11,9 +11,13 @@
                                 <div class="icon">
                                     <i class="zmdi zmdi-account-o"></i>
                                 </div>
+                                <?php
+                                    $kh = DB::table('khachhang')->get();
+                                    $skh = count($kh);
+                                ?>
                                 <div class="text">
-                                    <h2>1000</h2>
-                                    <span>members online</span>
+                                    <h2>{{ $skh }}</h2>
+                                    <span>Tổng khách hàng</span>
                                 </div>
                             </div>
                         </div>
@@ -26,9 +30,13 @@
                                 <div class="icon">
                                     <i class="zmdi zmdi-shopping-cart"></i>
                                 </div>
+                                <?php
+                                    $hd = DB::table('hoadon')->get();
+                                    $shd = count($hd);
+                                ?>
                                 <div class="text">
-                                    <h2>388,688</h2>
-                                    <span>items solid</span>
+                                    <h2>{{$shd}}</h2>
+                                    <span>Tổng hóa đơn</span>
                                 </div>
                             </div>
                         </div>
@@ -41,9 +49,13 @@
                                 <div class="icon">
                                     <i class="zmdi zmdi-calendar-note"></i>
                                 </div>
+                                <?php
+                                    $bl = DB::table('binhluan')->get();
+                                    $sbl = count($bl);
+                                ?>
                                 <div class="text">
-                                    <h2>1,086</h2>
-                                    <span>this week</span>
+                                    <h2>{{$sbl}}</h2>
+                                    <span>Tổng bình luận</span>
                                 </div>
                             </div>
                         </div>
@@ -56,9 +68,13 @@
                                 <div class="icon">
                                     <i class="zmdi zmdi-money"></i>
                                 </div>
+                                <?php
+                                    $sp = DB::table('sanpham')->get();
+                                    $ssp = count($sp);
+                                ?>
                                 <div class="text">
-                                    <h2>$1,060,386</h2>
-                                    <span>total earnings</span>
+                                    <h2>{{$ssp}}</h2>
+                                    <span>Tổng sản phẩm</span>
                                 </div>
                             </div>
                         </div>

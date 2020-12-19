@@ -53,6 +53,18 @@ class CtController extends Controller
         return view('cartchild', compact('cartitem'));
     }
 
+    function upCartB(Request $request,$id){
+        $userID = $request->session()->get('khachhang')['Id_KH'];
+        \Cart::session($userID)->update($id, [
+            'quantity' => array(
+                'relative' => false,
+                'value' => request('quantity'),
+            ),
+        ]);
+        $cartitem = \Cart::session($request->session()->get('khachhang')['Id_KH'])->getContent();
+        return redirect()->back();
+    }
+    
     function deleteCart(Request $request, $id)
     {
         $cartdel = \Cart::session($request->session()->get('khachhang')['Id_KH'])->remove($id);
