@@ -43,7 +43,7 @@ class DangnhapController extends Controller
 
     public function emailQmk(Request $request)
     {
-        $khachhang = khachhang::where(['email' => $request->email])->first(); 
+        $khachhang = khachhang::where(['email' => $request->email])->first();
         $details = [
             'name' => $khachhang->Ten_KH,
             'email' => $request->get('email'),

@@ -18,18 +18,15 @@ $kh = Session::has('khachhang');
 			<div class="col-lg-12 ftco-animate">
 				<div class="row ">
 					<div class="col-md-12 nav-link-wrap mb-5">
-
 						<div class="nav ftco-animate nav-pills justify-content-center" id="v-pills-tab" role="tablist" aria-orientation="vertical">
 							@foreach($loaisp as $loai)
 							@if ($loop->first)
 							<a class="nav-link active" id="v-pills-<?= $loai->Id_LoaiSP ?>-tab" data-toggle="pill" href="#v-pills-<?= $loai->Id_LoaiSP ?>" role="tab" aria-controls="v-pills-<?= $loai->Id_LoaiSP ?>" aria-selected="true"><?= $loai->Ten_LoaiSP ?></a>
 							@else
-
 							<a class="nav-link" id="v-pills-<?= $loai->Id_LoaiSP ?>-tab" data-toggle="pill" href="#v-pills-<?= $loai->Id_LoaiSP ?>" role="tab" aria-controls="v-pills-<?= $loai->Id_LoaiSP ?>" aria-selected="false"><?= $loai->Ten_LoaiSP ?></a>
 							@endif
 							@endforeach
 						</div>
-
 					</div>
 					<div class="col-md-12 d-flex align-items-center">
 
@@ -41,7 +38,7 @@ $kh = Session::has('khachhang');
 									<?php
 									$sanpham = DB::table('sanpham')->select('Id_SP', 'Ten_SP', 'urlHinh1', 'Gia', 'Id_LoaiSP')
 										->where('Id_LoaiSP', '=', $loai->Id_LoaiSP)
-										->where('sanpham.AnHien', '=', '1')->limit('4')->get();
+										->where('sanpham.AnHien', '=', '1')->limit('10')->get();
 									?>
 									@foreach($sanpham as $showsp)
 									<div class=" col-md-3 ">
@@ -109,7 +106,7 @@ $kh = Session::has('khachhang');
 							</div>
 							@else
 							<div class="tab-pane fade" id="v-pills-<?= $loai->Id_LoaiSP ?>" role="tabpanel" aria-labelledby="v-pills-<?= $loai->Id_LoaiSP ?>-tab">
-								<div class="row">
+								<div class="row slider-product owl-carousel">
 									<?php
 									$sanpham = DB::table('sanpham')->select('Id_SP', 'Ten_SP', 'urlHinh1', 'Gia', 'Id_LoaiSP')
 										->where('Id_LoaiSP', '=', $loai->Id_LoaiSP)
@@ -148,36 +145,37 @@ $kh = Session::has('khachhang');
 												{{-- <p class="mota">{{ $showsp->MoTa }}</p> --}}
 												<p class="price"><span>{{ number_format($showsp->Gia) }} đ</span></p>
 												{{-- <p><a href="{{action("ProductController@detailproduct",['Id_SP'=>$showsp->Id_SP])}}" class="btn btn-primary btn-outline-primary">Chi tiết</a></p> --}}
+												<script>
+													var idkh = {{$kh}}
+													$('#cartform-{{ $showsp->Id_SP }}').submit(function(e) {
+														e.preventDefault();
+														if (idkh > 0) {
+															let id = $("#id-{{ $showsp->Id_SP }}").val()
+															$.ajax({
+																type: "POST",
+																url: "{{route('ct.add')}}",
+																data: {
+																	"_token": "{{ csrf_token() }}",
+																	id: id,
+																},
+																success: function(response) {
+																	if (response) {
+																		$("#change-item-cart").empty();
+																		$("#change-item-cart").html(response);
+																		alertify.success('Sản phẩm đã được thêm');
+																	}
+																}
+															});
+														} else {
+															alertify.error('Đăng nhập để thêm giỏ hàng');
+														}
+													});
+												</script>
 											</div>
 										</div>
 									</div>
 
-									<script>
-										var idkh = {{$kh}}
-										$('#cartform-{{ $showsp->Id_SP }}').submit(function(e) {
-											e.preventDefault();
-											if (idkh > 0) {
-												let id = $("#id-{{ $showsp->Id_SP }}").val()
-												$.ajax({
-													type: "POST",
-													url: "{{route('ct.add')}}",
-													data: {
-														"_token": "{{ csrf_token() }}",
-														id: id,
-													},
-													success: function(response) {
-														if (response) {
-															$("#change-item-cart").empty();
-															$("#change-item-cart").html(response);
-															alertify.success('Sản phẩm đã được thêm');
-														}
-													}
-												});
-											} else {
-												alertify.error('Đăng nhập để thêm giỏ hàng');
-											}
-										});
-									</script>
+									
 									@endforeach
 								</div>
 							</div>

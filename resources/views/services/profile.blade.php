@@ -115,7 +115,7 @@
         </div>
         <div class="row justify-content-center mt-5 mb-3">
             <div class="col-md-7 heading-section text-center ftco-animate">
-                <span class="subheading" style="margin-bottom: 15px">Điểm Tích Được</span>
+                <span class="dxt-title" style="margin-bottom: 15px">Điểm Tích Được</span>
             </div>
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="rewards_new_list_rank">
@@ -147,7 +147,7 @@
                             </li>
                             <li class="active flex-auto rewards_new_header_tab_item" style="border-bottom: 12px solid #ed8626">
                                 <a data-toggle="tab" href="#tab-5">
-                                    <span class="rewards_new_header_tab_item_icon"><img src="https://file.hstatic.net/1000075078/file/bean-05_c90cf6fc5baf430ba23efd48f2362db4.png" alt="Thành Viên Kim Cương"></span>
+                                    <span class="rewards_new_header_tab_item_icon"><img src="https://file.hstatic.net/1000075078/file/bean-05_c90cf6fc5baf430ba23efd48f2362db4.png" style="width: 78px" alt="Thành Viên Kim Cương"></span>
                                     <span class="rewards_new_header_tab_item_title">Thành Viên Kim Cương</span>
                                     <span class="rewards_new_header_tab_item_point">3000 Bean</span></a>
                             </li>
@@ -161,6 +161,7 @@
                 <span class="rewards_new_header_tab_item_point">Điểm Tích Được : {{ $kh->Tich_diem }}</span></a>
                 
                 <div class="progress">
+                    <p class="kl">1000 Bean</p>
                     <div id="ctc" class="progress-bar" role="progressbar" style="width: {{ $diemtich }}%" aria-valuenow="{{ $diemtich }}" aria-valuemin="0" aria-valuemax="3000"></div>
                 </div>
                 <script>
@@ -196,6 +197,17 @@
     }
     .bg-or{
         background-color: #ed8626;
+    }
+    .kl {
+        position: absolute;
+        width: 100%;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 600;
+        font-size: 14px;
+        color: #000;
     }
 </style>
 @include('bill')

@@ -13,7 +13,7 @@ $kh = Session::has('khachhang');
 				<p>Được trải nghiệm nhiều loại thức uống, nhưng khách hàng vẫn ưa thích những món nước này. Đó là nguyên nhân Burn Coffee luôn cuốn hút và giữ chân khách hàng</p>
 			</div>
 		</div>
-		<div class="row  border-box">
+		<div class="row border-box slider-seller owl-carousel">
 			@foreach($bestseller as $showsp)
 			<?php
 				$gh = DB::table('giohang')->select('Id_GH', 'Id_SP', 'So_Luong', 'Id_KH')->where('Id_SP', '=', $showsp->Id_SP)->first();
@@ -45,37 +45,36 @@ $kh = Session::has('khachhang');
 						<h3><a href="{{action("ProductController@detailproduct",['Id_SP'=>$showsp->Id_SP])}}"><?= $showsp->Ten_SP ?></a></h3>
 						{{-- <p class="mota">{{ $showsp->MoTa }}</p> --}}
 						<p class="price"><span>{{ number_format($showsp->Gia) }} đ</span></p>
+						<script>
+							var idkh = {{$kh}}
+							$('#cartform1-{{ $showsp->Id_SP }}').submit(function(e) {
+								e.preventDefault();
+								if (idkh > 0) {
+									let id = $("#id-{{ $showsp->Id_SP }}").val()
+									$.ajax({
+										type: "POST",
+										url: "{{route('ct.add')}}",
+										data: {
+											"_token": "{{ csrf_token() }}",
+											id: id,
+										},
+										success: function(response) {
+											if (response) {
+												$("#change-item-cart").empty();
+												$("#change-item-cart").html(response);
+												alertify.success('Sản phẩm đã được thêm');
+											}
+										}
+									});
+								} else {
+									alertify.error('Đăng nhập để thêm giỏ hàng');
+								}
+							});
+						</script>
 					</div>
 
 				</div>
 			</div>
-
-			<script>
-				var idkh = {{$kh}}
-				$('#cartform1-{{ $showsp->Id_SP }}').submit(function(e) {
-					e.preventDefault();
-					if (idkh > 0) {
-						let id = $("#id-{{ $showsp->Id_SP }}").val()
-						$.ajax({
-							type: "POST",
-							url: "{{route('ct.add')}}",
-							data: {
-								"_token": "{{ csrf_token() }}",
-								id: id,
-							},
-							success: function(response) {
-								if (response) {
-									$("#change-item-cart").empty();
-									$("#change-item-cart").html(response);
-									alertify.success('Sản phẩm đã được thêm');
-								}
-							}
-						});
-					} else {
-						alertify.error('Đăng nhập để thêm giỏ hàng');
-					}
-				});
-			</script>
 			@endforeach
 		</div>
 	</div>

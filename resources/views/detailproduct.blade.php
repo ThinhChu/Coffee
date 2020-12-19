@@ -252,9 +252,6 @@
 	.card{
 		background-color: unset !important;
 	}
-	.progress {
-		height: 1.3rem !important;
-	}
 	.progress-bar{
 		background-color: #ff9f02 !important;
 	}

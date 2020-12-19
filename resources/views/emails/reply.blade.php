@@ -1,8 +1,8 @@
-<h2>Tôi là {{ $detail['name'] }}</h2>
+<h2>Tôi là {{ $name }}</h2>
 <p>
-{{ $detail['tieude'] }}
+{{ $tieude ?? '' }}
 </p>
 <br>
 <p>
-{{ $detail['content'] }}
+{{ $content ?? ''}}
 </p>

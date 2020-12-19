@@ -8,7 +8,7 @@ $userv = count($uservote);
 <div class="container mt-5 t">
 
 <div class="card">
-    <div class="card-header">
+    <div class="card-header" style="text-align: center;">
         <h3>Đánh giá</h3>
         <div class="select-wrap">
             <div class="stars">
@@ -89,11 +89,11 @@ $userv = count($uservote);
                     <strong>Đánh Giá</strong> của người dùng :</p>
                 <div class="progress mb-3">
                     <p class="kl">Tỉ lệ 5 sao</p>
-                    <div class="progress-bar bg-success" id="vt5" role="progressbar"  aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                    <div class="progress-bar bg-warning" id="vt5" role="progressbar"  aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                 </div>
                 <div class="progress mb-3">
                     <p class="kl">Tỉ lệ 4 sao</p>
-                    <div class="progress-bar bg-info" id="vt4" role="progressbar"  aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                    <div class="progress-bar bg-warning" id="vt4" role="progressbar"  aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
                 </div>
                 <div class="progress mb-3">
                     <p class="kl">Tỉ lệ 3 sao</p>
@@ -101,11 +101,11 @@ $userv = count($uservote);
                 </div>
                 <div class="progress mb-3">
                     <p class="kl">Tỉ lệ 2 sao</p>
-                    <div class="progress-bar " role="progressbar" id="vt2"  aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                    <div class="progress-warning " role="progressbar" id="vt2"  aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
                 </div>
                 <div class="progress mb-3">
                     <p class="kl">Tỉ lệ 1 sao</p>
-                    <div class="progress-bar bg-danger" id="vt1" role="progressbar"  aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                    <div class="progress-bar bg-warning" id="vt1" role="progressbar"  aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
                 </div>
             </div>
         </div>
@@ -188,9 +188,13 @@ $userv = count($uservote);
     .kl {
         position: absolute;
         width: 100%;
-        text-align: center;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         font-weight: 600;
         font-size: 14px;
+        color: #000;
     }
     .progress{
         position: relative;
