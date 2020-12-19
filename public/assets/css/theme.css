@@ -4240,6 +4240,7 @@ label.form-check-label {
 /* ----- Table ----- */
 .table {
     margin: 0;
+    table-layout: auto;
 }
 
 .table-responsive.table--no-card {
@@ -4274,15 +4275,10 @@ label.form-check-label {
 .table-earning tbody td {
     color: #808080;
     padding: 12px 40px;
-    white-space: inherit;
+    white-space: nowrap;
     text-align: center;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2;
-    -o-text-overflow: ellipsis;
-    display: -webkit-box;
-    height: 75px;
     overflow: hidden;
-    text-overflow: ellipsis;
+    height: 100px;
 }
 
 .table-earning tbody td.text-right {
@@ -4304,7 +4300,7 @@ label.form-check-label {
 }
 
 .table-top-countries tbody td {
-    white-space: inherit;
+    white-space: nowrap;
     font-size: 14px;
     color: #fff;
     padding: 14px 5px;
