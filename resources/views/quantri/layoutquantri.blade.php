@@ -53,45 +53,6 @@
                             <div class="header-button">
                                 <div class="noti-wrap">
                                     <div class="noti__item js-item-menu">
-                                        <i class="zmdi zmdi-email"></i>
-                                        <span class="quantity">1</span>
-                                        <div class="email-dropdown js-dropdown">
-                                            <div class="email__title">
-                                                <p>You have 3 New Emails</p>
-                                            </div>
-                                            <div class="email__item">
-                                                <div class="image img-cir img-40">
-                                                    <img src="assets/images/icon/avatar-06.jpg" alt="Cynthia Harvey" />
-                                                </div>
-                                                <div class="content">
-                                                    <p>Meeting about new dashboard...</p>
-                                                    <span>Cynthia Harvey, 3 min ago</span>
-                                                </div>
-                                            </div>
-                                            <div class="email__item">
-                                                <div class="image img-cir img-40">
-                                                    <img src="assets/images/icon/avatar-05.jpg" alt="Cynthia Harvey" />
-                                                </div>
-                                                <div class="content">
-                                                    <p>Meeting about new dashboard...</p>
-                                                    <span>Cynthia Harvey, Yesterday</span>
-                                                </div>
-                                            </div>
-                                            <div class="email__item">
-                                                <div class="image img-cir img-40">
-                                                    <img src="assets/images/icon/avatar-04.jpg" alt="Cynthia Harvey" />
-                                                </div>
-                                                <div class="content">
-                                                    <p>Meeting about new dashboard...</p>
-                                                    <span>Cynthia Harvey, April 12,,2018</span>
-                                                </div>
-                                            </div>
-                                            <div class="email__footer">
-                                                <a href="#">See all emails</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="noti__item js-item-menu">
                                         <?php
                                             $binhluan = DB::table('binhluan')->limit('3')->orderBy('Id_BL', 'DESC')->get();
                                             $sltb = DB::table('binhluan')->where('TT_TB', '=', 1)->get();
@@ -113,7 +74,7 @@
                                                         <button type="submit" style="width: 100%">
                                                             <div class="mess__item active1">
                                                                 <div class="image img-cir img-40">
-                                                                    <img src="assets/images/icon/avatar-06.jpg" alt="Michelle Moreno" />
+                                                                    <img src="assets/images/user.png" alt="Michelle Moreno" />
                                                                 </div>
                                                                 <div class="content">
                                                                     <h6>{{$kh->Ten_KH}}</h6>
@@ -131,7 +92,7 @@
                                                         <button type="submit" style="width: 100%">
                                                             <div class="mess__item">
                                                                 <div class="image img-cir img-40">
-                                                                    <img src="assets/images/icon/avatar-06.jpg" alt="Michelle Moreno" />
+                                                                    <img src="assets/images/user.png" alt="Michelle Moreno" />
                                                                 </div>
                                                                 <div class="content">
                                                                     <h6>{{$kh->Ten_KH}}</h6>
@@ -154,7 +115,7 @@
                                             $slhd = DB::table('hoadon')->where('TT_TB', '=', 1)->get();
                                             $sls = count($slhd);
                                         ?>
-                                        <i class="zmdi zmdi-comment-more"></i>
+                                        <i class="zmdi zmdi-shopping-cart"></i>
                                         <span class="quantity">{{ $sls }}</span>
                                         <div class="mess-dropdown js-dropdown">
                                             <div class="mess__title">
@@ -170,7 +131,7 @@
                                                         <button type="submit" style="width: 100%">
                                                             <div class="mess__item active1">
                                                                 <div class="image img-cir img-40">
-                                                                    <img src="assets/images/icon/avatar-06.jpg" alt="Michelle Moreno" />
+                                                                    <img src="assets/images/user.png" alt="Michelle Moreno" />
                                                                 </div>
                                                                 <div class="content">
                                                                     <h6>{{$kh->Ten_KH}}</h6>
@@ -187,7 +148,7 @@
                                                         <button type="submit" style="width: 100%">
                                                             <div class="mess__item">
                                                                 <div class="image img-cir img-40">
-                                                                    <img src="assets/images/icon/avatar-06.jpg" alt="Michelle Moreno" />
+                                                                    <img src="assets/images/user.png" alt="Michelle Moreno" />
                                                                 </div>
                                                                 <div class="content">
                                                                     <h6>{{$kh->Ten_KH}}</h6>
@@ -205,8 +166,8 @@
                                 </div>
                                 <div class="account-wrap">
                                     <div class="account-item clearfix js-item-menu">
-                                        <div class="image">
-                                            <!-- <img src="assets/images/icon/avatar-01.jpg" alt="John Doe" /> -->
+                                        <div class="image" style="border-radius: 50%">
+                                            <img src="assets/images/user.png" alt="John Doe" />
                                         </div>
                                         <div class="content">
                                             <a class="js-acc-btn" href="#">
@@ -217,7 +178,7 @@
                                             <div class="info clearfix">
                                                 <div class="image">
                                                     <a href="#">
-                                                        <!-- <img src="assets/images/icon/avatar-01.jpg" alt="John Doe" /> -->
+                                                        <img src="assets/images/user.png" alt="John Doe" />
                                                     </a>
                                                 </div>
                                                 <div class="content">
@@ -229,20 +190,6 @@
                                                     <span class="email">
                                                         {{ Session::get('nhanvien')['email'] }}
                                                     </span>
-                                                </div>
-                                            </div>
-                                            <div class="account-dropdown__body">
-                                                <div class="account-dropdown__item">
-                                                    <a href="#">
-                                                        <i class="zmdi zmdi-account"></i>Account</a>
-                                                </div>
-                                                <div class="account-dropdown__item">
-                                                    <a href="#">
-                                                        <i class="zmdi zmdi-settings"></i>Setting</a>
-                                                </div>
-                                                <div class="account-dropdown__item">
-                                                    <a href="#">
-                                                        <i class="zmdi zmdi-money-box"></i>Billing</a>
                                                 </div>
                                             </div>
                                             <div class="account-dropdown__footer">

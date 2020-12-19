@@ -43,8 +43,6 @@ class SanPhamController extends Controller
             'Gia' => $request->get('Gia'),
             'Gia_KM' => $request->get('Gia_KM'),
             'urlHinh1' => $request->get('urlHinh1'),
-            // 'urlHinh2' => $request->get('urlHinh2'),
-            // 'urlHinh3' => $request->get('urlHinh3'),
             'So_luong' => $request->get('So_luong'),
             'AnHien' => $request->get('AnHien'),
             'ThuTu' => $request->get('ThuTu'),
