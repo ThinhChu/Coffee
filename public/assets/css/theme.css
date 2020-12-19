@@ -3175,27 +3175,19 @@ label.form-check-label {
 }
 
 .overview-item--c1 {
-    background-image: -moz-linear-gradient(90deg, #3f5efb 0%, #fc466b 100%);
-    background-image: -webkit-linear-gradient(90deg, #3f5efb 0%, #fc466b 100%);
-    background-image: -ms-linear-gradient(90deg, #3f5efb 0%, #fc466b 100%);
+    background-color: #583216;
 }
 
 .overview-item--c2 {
-    background-image: -moz-linear-gradient(90deg, #11998e 0%, #38ef7d 100%);
-    background-image: -webkit-linear-gradient(90deg, #11998e 0%, #38ef7d 100%);
-    background-image: -ms-linear-gradient(90deg, #11998e 0%, #38ef7d 100%);
+    background-color: #a7693b;
 }
 
 .overview-item--c3 {
-    background-image: -moz-linear-gradient(90deg, #ee0979 0%, #ff6a00 100%);
-    background-image: -webkit-linear-gradient(90deg, #ee0979 0%, #ff6a00 100%);
-    background-image: -ms-linear-gradient(90deg, #ee0979 0%, #ff6a00 100%);
+    background-color: #e7904d;
 }
 
 .overview-item--c4 {
-    background-image: -moz-linear-gradient(90deg, #45b649 0%, #dce35b 100%);
-    background-image: -webkit-linear-gradient(90deg, #45b649 0%, #dce35b 100%);
-    background-image: -ms-linear-gradient(90deg, #45b649 0%, #dce35b 100%);
+    background-color: #ae825a;
 }
 
 .overview-box .icon {
@@ -4282,8 +4274,15 @@ label.form-check-label {
 .table-earning tbody td {
     color: #808080;
     padding: 12px 40px;
-    white-space: nowrap;
+    white-space: inherit;
     text-align: center;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    -o-text-overflow: ellipsis;
+    display: -webkit-box;
+    height: 75px;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .table-earning tbody td.text-right {
@@ -4305,7 +4304,7 @@ label.form-check-label {
 }
 
 .table-top-countries tbody td {
-    white-space: nowrap;
+    white-space: inherit;
     font-size: 14px;
     color: #fff;
     padding: 14px 5px;

@@ -62,18 +62,9 @@
                                     <label>
                                         <input type="checkbox" name="remember">Lưu tài khoản
                                     </label>
-                                    <label>
-                                        <a href="#">Quên mật khẩu ?</a>
-                                    </label>
                                 </div>
                                 <button class="au-btn au-btn--block au-btn--blue m-b-20" type="submit">Đăng nhập</button>
                             </form>
-                            <div class="register-link">
-                                <p>
-                                    Bạn không có tài khoản ?
-                                    <a href="#">Đăng kí tại đây</a>
-                                </p>
-                            </div>
                         </div>
                     </div>
                 </div>

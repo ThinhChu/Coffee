@@ -25,7 +25,7 @@
             <!-- <li class="nav-item"><a href="{{ url('/dich-vu') }}" class="nav-link">Về chúng tôi</a></li> -->
             <li class="nav-item {{ request()->is('lien-he') ? 'active' : '' }}"><a href="{{ url('/lien-he') }}" class="nav-link">Liên hệ</a></li>
             @if(Session::has('khachhang'))
-                <li class="nav-item  dropdown">
+                <li class="nav-item  {{ request()->is('ho-so') ? 'active' : '' }} dropdown">
                     <a  class="nav-link" href="{{ url('/ho-so') }}">
                         {{ Session::get('khachhang')['Ten_KH'] }}
                     </a>
@@ -36,17 +36,18 @@
                 <?php
                     $cartitem = \Cart::session(Session::get('khachhang')['Id_KH'])->getContent();
                 ?>
-                <div class="c"  id="change-item-cart">
+                <div id="change-item-cart" style="display: flex;align-items: center">
                     <li class="nav-item cart">
-                        <a href="{{ url('/gio-hang') }}" class="nav-link">
+                        <a href="{{ url('/gio-hang') }}" class="nav-link d-flex align-items-center">
                             <span class="icon icon-shopping_cart"></span>
-                            <span class="bag d-flex justify-content-center align-items-center">
+                            <span class="number-cart">
                                 <small id="slgh">{{$cartitem->count()}}</small>
                             </span>
                         </a>
                         <div class="khung">
                             <div >
-                                <table class="carts">
+                            <div class="carts">
+                                <table>
                                     <thead>
                                         <tr>
                                             <th></th>
@@ -58,16 +59,16 @@
                                     </thead>
                                     <tbody>
                                         @foreach ($cartitem as $cart)
-                                            <?php
-                                                $sp = DB::table('sanpham')->select('Id_SP', 'urlHinh1')->where('Id_SP', '=' ,$cart->id)->first();
-                                            ?>
-                                            <tr id="sid{{ $cart->id }}">
-                                                <td><img width="70px" height="70px" class="mt-3 mb-3 c" src="./images/{{$sp->urlHinh1}}" alt=""></td>
-                                                <td>{{$cart->name}}</td>
-                                                <td>{{$cart->quantity}}</td>
-                                                <td class="totals">{{ number_format($cart->price) }}đ</td>
-                                                <td class="product-remove dl"><a href="javascript:" onclick="deleteCart({{$cart->id}})"><span class="icon-close"></span></a></td>
-                                            </tr>
+                                        <?php
+                                        $sp = DB::table('sanpham')->select('Id_SP', 'urlHinh1')->where('Id_SP', '=', $cart->id)->first();
+                                        ?>
+                                        <tr id="sid{{ $cart->id }}">
+                                            <td><img width="70px" height="80px" style="object-fit: cover;" class="mt-3 mb-3 c" src="./images/{{$sp->urlHinh1}}" alt=""></td>
+                                            <td>{{$cart->name}}</td>
+                                            <td>{{$cart->quantity}}</td>
+                                            <td class="totals">{{ number_format($cart->price) }}đ</td>
+                                            <td class="product-remove dl"><a href="javascript:" onclick="deleteCart({{$cart->id}})"><span class="icon-close"></span></a></td>
+                                        </tr>
                                         @endforeach
                                     </tbody>
                                     <tbody class="bd2">
@@ -81,7 +82,8 @@
                                     </tbody>
                                 </table>
                             </div>
-                            <div class="but ml-2 mr-2 mt-2 mb-2">
+                            </div>
+                            <div class="but">
                                 <a type="submit" href="/thanh-toan" class="btn btn-primary">Thanh toán</a>
                             </div>
                         </div>

@@ -17,14 +17,6 @@
 								<a href="#">
 									<img src="images/menu-1.jpg" alt="">
 								</a>
-								<ul class="featured_item">
-									<li>
-										<a href="#"><span class="icon-eye"></span></a>
-									</li>
-									<li>
-										<a href="#"><span class="icon-shopping-cart"></span></a>
-									</li>
-								</ul>
 							</div>
 						</div>
 					</div>
@@ -34,14 +26,6 @@
 								<a href="#">
 									<img src="images/menu-2.jpg" alt="">
 								</a>
-								<ul class="featured_item">
-									<li>
-										<a href="#"><span class="icon-eye"></span></a>
-									</li>
-									<li>
-										<a href="#"><span class="icon-shopping-cart"></span></a>
-									</li>
-								</ul>
 							</div>
 						</div>
 					</div>
@@ -51,14 +35,6 @@
 								<a href="#">
 									<img src="images/menu-3.jpg" alt="">
 								</a>
-								<ul class="featured_item">
-									<li>
-										<a href="#"><span class="icon-eye"></span></a>
-									</li>
-									<li>
-										<a href="#"><span class="icon-shopping-cart"></span></a>
-									</li>
-								</ul>
 							</div>
 						</div>
 					</div>
@@ -68,14 +44,6 @@
 								<a href="#">
 									<img src="images/menu-4.jpg" alt="">
 								</a>
-								<ul class="featured_item">
-									<li>
-										<a href="#"><span class="icon-eye"></span></a>
-									</li>
-									<li>
-										<a href="#"><span class="icon-shopping-cart"></span></a>
-									</li>
-								</ul>
 							</div>
 						</div>
 					</div>

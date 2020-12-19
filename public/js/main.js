@@ -118,6 +118,29 @@ AOS.init({
 				}
 			}
 		});
+		$('.slider-seller').owlCarousel({
+			autoplay: false,
+			autoplayTimeout: 4000,
+			items: 1,
+			nav: true,
+			responsive: {
+				0: {
+					items: 1,
+					stagePadding: 0
+				},
+				600: {
+					items: 2,
+				},
+				992: {
+					items: 3,
+					stagePadding: 0
+				},
+				1200: {
+					items: 4,
+					stagePadding: 0
+				}
+			}
+		});
 
 	};
 	carousel();
