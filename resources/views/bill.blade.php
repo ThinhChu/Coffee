@@ -89,22 +89,22 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach($hd2 as $cc)
+                                        @foreach($hd2 as $cc1)
                                             <tr>
-                                                <td>{{ $cc->Id_HD }}</td>
-                                                <td>{{ $cc->Ngay_Dang }}</td>
-                                                <td>{{ number_format($cc->Tong_Tien) }}Đ</td>
-                                                @if ($cc->PT_TT == 1)
+                                                <td>{{ $cc1->Id_HD }}</td>
+                                                <td>{{ $cc1->Ngay_Dang }}</td>
+                                                <td>{{ number_format($cc1->Tong_Tien) }}Đ</td>
+                                                @if ($cc1->PT_TT == 1)
                                                     <td>Trực tiếp</td>
-                                                @elseif($cc->PT_TT == 1)
+                                                @elseif($cc1->PT_TT == 2)
                                                     <td>Chuyển khoản</td>
                                                 @else
                                                     <td>Ví điện tử</td>
                                                 @endif
                                                 <td class="td-actions">
-                                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Chi Tiết</button>
+                                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#model-{{$cc1->Id_HD}}">Chi Tiết</button>
 
-                                                    <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                                                    <div class="modal fade bd-example-modal-lg" tabindex="-1" id="model-{{$cc1->Id_HD}}" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                                                         <div class="modal-dialog modal-lg">
                                                             <div class="modal-content">
                                                                 <div class="modal-header">
@@ -121,18 +121,18 @@
                                                                         <th>Phí</th>
                                                                         <th>Giá</th>
                                                                     </thead>
-                                                                    <tbody>
                                                                         <?php
-                                                                            $sp = DB::table('chitiethoadon')->select('Id_CT', 'Id_SP', 'Ten_SP', 'So_Luong','Id_Hd')->where('Id_Hd', '=', $cc->Id_HD)->get();    
+                                                                             $cthd = DB::table('chitiethoadon')->where('Id_HD', '=', $cc1->Id_HD)->get();   
                                                                         ?>
-                                                                        @foreach ($sp as $item)
+                                                                    <tbody>
+                                                                        @foreach ($cthd as $item)
                                                                             <tr>
                                                                                 <td>{{ $item->Id_CT }}</td>
                                                                                 <td>{{ $item->Ten_SP }}</td>
                                                                                 <td>{{ $item->So_Luong }}</td>
-                                                                                @if ($cc->PT_TT == 1)
+                                                                                @if ($cc1->PT_TT == 1)
                                                                                     <td>30,000Đ</td>
-                                                                                @elseif($cc->PT_TT == 1)
+                                                                                @elseif($cc1->PT_TT == 2)
                                                                                     <td>10,000Đ</td>
                                                                                 @else
                                                                                     <td>0Đ</td>

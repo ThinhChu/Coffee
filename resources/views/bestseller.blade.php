@@ -42,7 +42,7 @@ $kh = Session::has('khachhang');
 						</ul>
 					</div>
 					<div class="text pt-4">
-						<h3><a href="{{action("ProductController@detailproduct",['Id_SP'=>$showsp->Id_SP])}}"><?= $showsp->Ten_SP ?></a></h3>
+						<h3><a class="chunau" href="{{action("ProductController@detailproduct",['Id_SP'=>$showsp->Id_SP])}}"><?= $showsp->Ten_SP ?></a></h3>
 						{{-- <p class="mota">{{ $showsp->MoTa }}</p> --}}
 						<p class="price"><span>{{ number_format($showsp->Gia) }} đ</span></p>
 						<script>

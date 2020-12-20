@@ -127,9 +127,6 @@ class SanPhamController extends Controller
                     $file_name = $file->getClientOriginalName();
                     $file->move('images/', $file_name);
                     $sanpham->urlHinh1 = $file_name;
-                }else{
-                    return $request;
-                    $sanpham->urlHinh1 = '';
                 }
         
             $sanpham ->save();
@@ -143,9 +140,8 @@ class SanPhamController extends Controller
                     'Id_SP' => $sanpham->Id_SP,
                     'Id_DM' => $Id_DM,
                 ]);
-            
-            $sp_to_dm->save();
-        }
+                $sp_to_dm->save();
+            }
             session()->put('msg', 'Đã cập nhật sản phẩm thành công');
             return redirect('/sanpham');
     }

@@ -194,7 +194,7 @@
 					@else
 						<h3> {{$sanpham->Ten_SP}}</h3>
 						<p class="price"><span> {{$sanpham->Gia}} đ </span></p>
-						<p> {{$sanpham->MoTa}}</p>
+						<p> {!!$sanpham->MoTa!!}</p>
 						<div class="row mt-4">
 							<div class="col-md-6">
 								<div class="form-group d-flex"></div>
