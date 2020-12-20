@@ -193,9 +193,9 @@ $kh = Session::has('khachhang');
 	</div>
 </section>
 <section>
-	<div class="slider-banner" style="background-image: url(images/BurnCoffee_Banner.jpg);">
+	<div class="slider-banner">
+		<img src="images/bannervoucher.jpg" alt="">
 		<div class="overlay"></div>
-
 	</div>
 	</div>
 </section>
