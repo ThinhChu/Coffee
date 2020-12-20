@@ -81,7 +81,7 @@ $userv = count($uservote);
                         <label class="star star-1" ></label>
                 </form>
             </div>
-            <h4 class="text-center vc"><li class="fas fa-user"></li> User <strong>{{ $userv }}</strong></h4>
+            <h4 class="text-center vc"><li class="fas fa-user"></li> Khách hàng  <strong>{{ $userv }}</strong></h4>
         </div>
         <div class="col-lg-8">
             <div class="card-body">
