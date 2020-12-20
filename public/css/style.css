@@ -181,6 +181,7 @@ svg:not(:root) {
   overflow: hidden; }
 
 table {
+  width: 100%;
   border-collapse: collapse; }
 
 caption {
@@ -9281,7 +9282,9 @@ textarea.form-control {
       display: inline-block;
       margin: 0 10px;
       opacity: .5; }
-
+.chunau{
+  color: #c49b63 !important;
+}
 .tagcloud a {
   text-transform: uppercase;
   display: inline-block;
