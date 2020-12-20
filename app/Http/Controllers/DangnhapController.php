@@ -33,7 +33,7 @@ class DangnhapController extends Controller
     }
     public function showquenmk()
     {
-        return view('quenmk');
+        return view('services.quenmk');
     }
 
     public function showlaymk($id)

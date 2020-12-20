@@ -30,7 +30,7 @@ class RegisterController extends Controller
             'name' => $r->get('Ten_KH'),
             'email' => $r->get('email'),
         ];
-        Mail::send('emails.reply', $details, function($message) use ($details) {
+        Mail::send('emails.dangky', $details, function($message) use ($details) {
             $message->to($details['email'])
             ->subject('Đăng Ký Thành Công');
         });
