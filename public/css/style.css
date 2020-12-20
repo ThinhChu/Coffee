@@ -8706,6 +8706,7 @@ textarea.form-control {
   border: 2px solid #c49b63;
   padding: 30px 30px;
   overflow-x: hidden;
+  margin: 0 auto;
 }
 .color-p{
   color: white;
