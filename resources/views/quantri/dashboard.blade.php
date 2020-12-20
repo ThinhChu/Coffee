@@ -28,7 +28,7 @@
                         <div class="overview__inner">
                             <div class="overview-box clearfix">
                                 <div class="icon">
-                                    <i class="zmdi zmdi-shopping-cart"></i>
+                                    <i class="zmdi zmdi-calendar-note"></i>
                                 </div>
                                 <?php
                                     $hd = DB::table('hoadon')->get();
@@ -47,7 +47,7 @@
                         <div class="overview__inner">
                             <div class="overview-box clearfix">
                                 <div class="icon">
-                                    <i class="zmdi zmdi-calendar-note"></i>
+                                    <i class="zmdi zmdi-comment-more"></i>
                                 </div>
                                 <?php
                                     $bl = DB::table('binhluan')->get();
@@ -66,7 +66,7 @@
                         <div class="overview__inner">
                             <div class="overview-box clearfix">
                                 <div class="icon">
-                                    <i class="zmdi zmdi-money"></i>
+                                    <i class="zmdi zmdi-coffee"></i>
                                 </div>
                                 <?php
                                     $sp = DB::table('sanpham')->get();

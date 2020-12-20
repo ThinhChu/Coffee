@@ -47,14 +47,14 @@
                         <td>{{ $row->AnHien }}</td>
                         <td class="td-actions">
                             <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-link btn-sm">
-                                <a href="{{route('binhluan.edit',$row->Id_BL)}}"><i class="material-icons">Edit</i></a>
+                                <a href="{{route('binhluan.edit',$row->Id_BL)}}"><i class="material-icons">Sửa</i></a>
                             </button>
                             
                             <form action="{{route('binhluan.destroy',$row->Id_BL)}}" method="post" class="btn btn-link btn-sm">
                                 {{  csrf_field() }}
                                 {!! method_field('delete') !!}
                                 <button onclick="return confirm('Bạn có chắc muốn xóa ?');"  class="btn btn-danger btn-link btn-sm">
-                                    <i class="material-icons">Close</i>
+                                    <i class="material-icons">Xóa</i>
                                 </button>
                             </form>
                         </td>

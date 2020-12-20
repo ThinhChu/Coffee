@@ -8683,6 +8683,11 @@ textarea.form-control {
 .ftco-animate {
   opacity: 0;
   visibility: hidden; }
+.ftco-gallery .ftco-animate{
+  overflow: hidden;
+}
+.ftco-gallery .ftco-animate:hover .gallery {
+    transform: scale(1.1); }
 
 .bg-primary {
   background: #c49b63 !important; }
@@ -8726,6 +8731,7 @@ textarea.form-control {
   background-color: #3a2618;
   border: 2px solid #c49b63;
   padding: 30px 30px;
+  overflow-x: hidden;
 }
 .color-p{
   color: white;
@@ -9652,7 +9658,7 @@ textarea.form-control {
 }
 @media screen and (max-width: 576px){
   .owl-item .col-md-3{
-    margin-left: 15px;
+    margin-left: 0;
   }
 }
 .menu-entry .text .mota{
