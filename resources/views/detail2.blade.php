@@ -54,7 +54,7 @@
 </section>
 <section>
 	<div class="slider-banner">
-	<img src="images/bannervoucher2.jpg" alt="">
+	<img src="images/BurnCoffee_Banner.jpg" alt="">
 		<div class="overlay"></div>
 
 	</div>

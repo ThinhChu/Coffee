@@ -211,7 +211,7 @@
 </section>
 
 <div class="slider-banner">
-	<img src="images/bannervoucher.jpg" alt="">
+	<img src="images/bannervoucher2.jpg" alt="">
       	<div class="overlay"></div>
         
         </div>
