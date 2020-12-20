@@ -8681,9 +8681,11 @@ textarea.form-control {
 
 .ftco-animate {
   opacity: 0;
-  overflow: hidden;
   visibility: hidden; }
-  .ftco-animate:hover .gallery {
+.ftco-gallery .ftco-animate{
+  overflow: hidden;
+}
+.ftco-gallery .ftco-animate:hover .gallery {
     transform: scale(1.1); }
 
 .bg-primary {
