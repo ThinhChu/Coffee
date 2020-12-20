@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\TinTuc;
+use App\Models\Tintuc;
 use App\Models\tt_to_tag;
 class TintucController extends Controller
 {
@@ -14,7 +14,7 @@ class TintucController extends Controller
      */
     public function index()
     {
-        $tt = tintuc::select('Id_TT', 'Tieu_De', 'Ngay_Dang', 'urlHinh', 'ND_dai', 'ND_ngan', 'ThuTu', 'AnHien', 'Tags', 'Id_NV')
+        $tt = Tintuc::select('Id_TT', 'Tieu_De', 'Ngay_Dang', 'urlHinh', 'ND_dai', 'ND_ngan', 'ThuTu', 'AnHien', 'Tags', 'Id_NV')
         ->orderby('Id_TT', 'desc')->get();
         return view('quantri.tintuc.index', compact('tt'));
     }
@@ -37,7 +37,7 @@ class TintucController extends Controller
      */
     public function store(Request $request)
     {
-        $tintuc = new tintuc([
+        $tintuc = new Tintuc([
             'Tieu_De' => $request->get('Tieu_De'),
             'Ngay_Dang' => $request->get('Ngay_Dang'),
             'urlHinh' => $request->get('urlHinh'),
@@ -94,7 +94,7 @@ class TintucController extends Controller
      */
     public function edit($id)
     {
-        $row = tintuc::find($id);
+        $row = Tintuc::find($id);
         return view('quantri.tintuc.edit', compact('row'));
     }
 
@@ -107,7 +107,7 @@ class TintucController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $tintuc = tintuc::find($id);
+        $tintuc = Tintuc::find($id);
 
             $tintuc->Tieu_De = $request->get('Tieu_De');
             $tintuc->Ngay_Dang = $request->get('Ngay_Dang');
@@ -151,7 +151,7 @@ class TintucController extends Controller
      */
     public function destroy($id)
     {
-        $tintuc = tintuc::find($id);
+        $tintuc = Tintuc::find($id);
         $tintuc->delete();
         session()->put('msg', 'Đã xóa tin tức thành công');
         return redirect('tintuc');

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use  App\Models\Hoadon;
+use  App\Models\HoaDon;
 use  App\Models\ChiTietHoaDon;
 class HoadonController extends Controller
 {
@@ -14,7 +14,7 @@ class HoadonController extends Controller
      */
     public function index()
     {
-        $hd = hoadon::select('Id_HD', 'Ngay_Dang', 'Tong_Tien', 'TrangThai',
+        $hd = HoaDon::select('Id_HD', 'Ngay_Dang', 'Tong_Tien', 'TrangThai',
          'PT_TT','AnHien', 'ThuTu', 'Ten_KH', 'Id_KH',
           'DienThoai', 'DiaChi', 'Quan', 'Phuong')
         ->orderBy('Id_HD','desc')->get();
@@ -65,7 +65,7 @@ class HoadonController extends Controller
     }
     public function detail($id)
     {
-        $kh = hoadon::select('Id_HD', 'Ten_KH', 'DienThoai', 'DiaChi', 'Quan',
+        $kh = HoaDon::select('Id_HD', 'Ten_KH', 'DienThoai', 'DiaChi', 'Quan',
          'Phuong', 'TrangThai', 'Voucher','Tong_Tien')->where('Id_HD', '=', $id)->first();
         $data = ["hoadon" => $kh];
         return view('quantri.hoadon.detail', $data);
@@ -84,7 +84,7 @@ class HoadonController extends Controller
 
     public function upHD(Request $request, $id)
     {
-        $bl = hoadon::find($id);
+        $bl = HoaDon::find($id);
         $bl->TT_TB = $request->get('TT_TB');
         $bl->save();
         return redirect('hoadon');
@@ -105,7 +105,7 @@ class HoadonController extends Controller
 
     public function destroy($id)
     {
-        $hd = hoadon::find($id);
+        $hd = HoaDon::find($id);
         $hd->delete();
         session()->put('msg', 'Đã xóa hóa đơn thành công');
         return redirect('hoadon');

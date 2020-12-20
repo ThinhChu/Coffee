@@ -80,7 +80,7 @@ Route::get('/quantophuong/{Id_Q}', function($Id_Q){
 
 Route::group(['middleware' => ['protectPage']], function () {
     Route::resource('danhmuc', 'DanhMucController');
-    Route::resource('loaisp', 'LoaiSPController');
+    Route::resource('loaisp', 'LoaispController');
     Route::resource('sanpham', 'SanPhamController');
         Route::post('sanpham.store', 'SanPhamController@store')->name('sanpham.store');
     Route::resource('khachhang', 'KhachhangController');

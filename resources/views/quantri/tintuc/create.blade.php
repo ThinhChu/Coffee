@@ -124,7 +124,7 @@
                                 <div class="col col-md-9">
                                     <div class="form-check">
                                         <?php
-                                            $tags = DB::table('Tags')->select('Id_Tag', 'Ten_Tag')->get();    
+                                            $tags = DB::table('tags')->select('Id_Tag', 'Ten_Tag')->get();    
                                         ?>
                                         @foreach ($tags as $tag)
                                             <div class="checkbox">

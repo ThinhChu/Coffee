@@ -14,7 +14,7 @@
 					<div class="col-md-6">
 						<div class="menu-entry">
 							<div class="img">
-								<a href="#">
+								<a href="javascript:">
 									<img src="images/menu-1.jpg" alt="">
 								</a>
 							</div>

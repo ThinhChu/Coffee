@@ -9095,7 +9095,8 @@ textarea.form-control {
   height: 270px; }
 
 .blog-entry {
-  overflow: hidden; }
+  overflow: hidden; 
+width: 100%}
   @media (min-width: 768px) {
     .blog-entry {
       margin-bottom: 30px; } }

@@ -1,5 +1,5 @@
 <?php
-$loaisp = DB::table('LoaiSP')->select('Id_LoaiSP', 'Ten_LoaiSP')
+$loaisp = DB::table('loaisp')->select('Id_LoaiSP', 'Ten_LoaiSP')
 	->orderby('ThuTu', 'asc')->where('AnHien', '=', '1')->get();
 $kh = Session::has('khachhang');
 ?>

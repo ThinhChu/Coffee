@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\danhgia;
+use App\Models\DanhGia;
 
 class DanhgiaController extends Controller
 {
@@ -14,7 +14,7 @@ class DanhgiaController extends Controller
      */
     public function index()
     {
-        $dg = danhgia::select('Id_DG', 'Danh_Gia', 'Id_SP', 'Id_KH')->orderBy('Id_DG','desc')->get();
+        $dg = DanhGia::select('Id_DG', 'Danh_Gia', 'Id_SP', 'Id_KH')->orderBy('Id_DG','desc')->get();
         return view('quantri.danhgia.index', compact('dg'));
 
         
@@ -38,7 +38,7 @@ class DanhgiaController extends Controller
      */
     public function store(Request $request)
     {
-        $dg = new danhgia([
+        $dg = new DanhGia([
             'Danh_Gia' => $request->get('Danh_Gia'),
             'Id_KH' => $request->get('Id_KH'),
             'Id_SP' => $request->get('Id_SP'),
@@ -69,7 +69,7 @@ class DanhgiaController extends Controller
      */
     public function edit($id)
     {
-        $row = danhgia::find($id);
+        $row = DanhGia::find($id);
         return view('quantri.danhgia.edit', compact('row'));
     }
 
@@ -82,7 +82,7 @@ class DanhgiaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $dg = danhgia::find($id);
+        $dg = DanhGia::find($id);
         $dg -> Danh_Gia = $request->get('Danh_Gia');
         $dg -> Id_KH = $request->get('Id_KH');
         $dg -> Id_SP = $request->get('Id_SP');
@@ -99,7 +99,7 @@ class DanhgiaController extends Controller
      */
     public function destroy($id)
     {
-        $dg = danhgia::find($id);
+        $dg = DanhGia::find($id);
         $dg->delete();
         session()->put('msg', 'Đã xóa đánh giá thành công');
         return redirect('danhgia');

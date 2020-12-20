@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Sanpham;
+use App\Models\sanpham;
 class CtController extends Controller
 {
     function index(Request $request)

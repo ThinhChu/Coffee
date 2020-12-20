@@ -1,7 +1,7 @@
 @extends('../layoutchild')
 	@include('services.backG')
 <?php
-	$quan = DB::table('Quan')->select('Id_Q', 'Ten_Quan')->where('AnHien','=','1')->get();
+	$quan = DB::table('quan')->select('Id_Q', 'Ten_Quan')->where('AnHien','=','1')->get();
 ?>
 <?php
 	$slsp = \Cart::session(Session::get('khachhang')['Id_KH'])->getContent();

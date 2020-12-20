@@ -1,7 +1,7 @@
 @extends('../layoutchild')
     @include('services.backG')
     <?php
-        $quan = DB::table('Quan')->select('Id_Q', 'Ten_Quan')->distinct()->where('AnHien','=','1')->get();
+        $quan = DB::table('quan')->select('Id_Q', 'Ten_Quan')->distinct()->where('AnHien','=','1')->get();
     ?>
     <?php
         // Session::has('khachhang');

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\loaisp;
+use App\Models\LoaiSP;
 class LoaispController extends Controller
 {
     /**
@@ -13,7 +13,7 @@ class LoaispController extends Controller
      */
     public function index() {
         // $search = $_GET['query'];->where('Ten_LoaiSP', 'like', '%'.$search.'%')
-        $ds = loaisp::select('Id_LoaiSP', 'Ten_LoaiSP', 'AnHien', 'ThuTu')
+        $ds = LoaiSP::select('Id_LoaiSP', 'Ten_LoaiSP', 'AnHien', 'ThuTu')
         ->orderBy('Id_LoaiSP','desc')->get();
         return view('quantri.loaisp.index', compact('ds'));
     }
@@ -36,12 +36,12 @@ class LoaispController extends Controller
      */
     public function store(Request $request)
     {
-        $loaisp = new loaisp([
+        $LoaiSP = new LoaiSP([
             'Ten_LoaiSP' => $request->get('Ten_LoaiSP'),
             'AnHien' => $request->get('AnHien'),
             'ThuTu' => $request->get('ThuTu'),
         ]);
-        $loaisp->save();
+        $LoaiSP->save();
         session()->put('msg', 'Đã thêm loại sản phẩm thành công');
         return redirect('/loaisp');
     }
@@ -65,7 +65,7 @@ class LoaispController extends Controller
      */
     public function edit($id)
     {
-        $row = loaisp::find($id);
+        $row = LoaiSP::find($id);
         return view('quantri.loaisp.edit', compact('row'));
     }
 
@@ -78,11 +78,11 @@ class LoaispController extends Controller
      */
     public function update(Request $request, $id)
     {
-       $loaisp = loaisp::find($id);
-       $loaisp -> Ten_LoaiSP = $request->get('Ten_LoaiSP');
-       $loaisp -> ThuTu = $request->get('ThuTu');
-       $loaisp -> AnHien = $request->get('AnHien');
-       $loaisp ->save();
+       $LoaiSP = LoaiSP::find($id);
+       $LoaiSP -> Ten_LoaiSP = $request->get('Ten_LoaiSP');
+       $LoaiSP -> ThuTu = $request->get('ThuTu');
+       $LoaiSP -> AnHien = $request->get('AnHien');
+       $LoaiSP ->save();
        session()->put('msg', 'Đã cập nhật loại sản phẩm thành công');
         return redirect('/loaisp');
     }
@@ -95,8 +95,8 @@ class LoaispController extends Controller
      */
     public function destroy($id)
     {
-       $loaisp = loaisp::find($id);
-       $loaisp->delete();
+       $LoaiSP = LoaiSP::find($id);
+       $LoaiSP->delete();
        session()->put('msg', 'Đã xóa loại sản phẩm thành công');
         return redirect('/loaisp');
     }

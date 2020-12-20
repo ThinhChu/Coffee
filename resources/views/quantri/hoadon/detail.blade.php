@@ -28,7 +28,7 @@
                     <td>{{ $hoadon->Ten_KH }}</td>
                     <td>{{ $hoadon->DienThoai }}</td>
                     <td>{{ $hoadon->DiaChi }}</td>
-                    <?php $quan = DB::Table('Quan')->where('Id_Q', '=', $hoadon->Quan)->first();?>
+                    <?php $quan = DB::Table('quan')->where('Id_Q', '=', $hoadon->Quan)->first();?>
                     <td>{{ $quan->Ten_Quan }}</td>
                     <td>{{ $hoadon->Phuong }}</td>
                     <td>{{ $hoadon->Voucher }}</td>
