@@ -8681,7 +8681,10 @@ textarea.form-control {
 
 .ftco-animate {
   opacity: 0;
+  overflow: hidden;
   visibility: hidden; }
+  .ftco-animate:hover .gallery {
+    transform: scale(1.1); }
 
 .bg-primary {
   background: #c49b63 !important; }
