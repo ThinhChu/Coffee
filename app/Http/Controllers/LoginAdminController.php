@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\NhanVien;
+use Illuminate\Support\Facades\Hash;
 class LoginAdminController extends Controller
 {
     function index(){
@@ -14,7 +15,7 @@ class LoginAdminController extends Controller
     function loginad(Request $r)
     {
         $nhanvien = nhanvien::where(['email' => $r->email])->first();
-        if(!$nhanvien || !($r->password == $nhanvien->password)){
+        if(!$nhanvien ||    !Hash::check($r->password, $nhanvien->password)){
             return "ádjasdjasjdklasjkdla";
         }
         else{
